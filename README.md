@@ -2,6 +2,8 @@ Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
 Gelesen bis vor Satz 5.4 (S. 70); nächstes Video: https://www.fau.tv/clip/id/3506
 
+https://www.fau.tv/clip/id/3542 skipped (WeihnachtsVL, nicht klausurrelevant laut ihr)
+
 (I): ∀b: ℕ. |{p prime | ∃a: ℕ. p ≡ a mod b ∧ gcd(a, b) = 1}| = ∞
 (II): ∀a: ℕ. ∀b: ℕ. gcd(a, b) = 1 ⇒ |{p prime | p ≡ a mod b}| = ∞
 
@@ -29,6 +31,12 @@ Klausur: RECHENAUFGABEN
 Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/ggT(a,b)) = 1.
 
 ## Algorithmen
+
+## Erweiterter Euklidischer Algorithmus für `ggT(a, b)`
+
+![](./README-euclids-algorithms.png)
+
+Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausdrücken.
 
 ## Lösungen von `ax + by = c` mit (x, y) in ℤ²
 
@@ -87,14 +95,30 @@ Finde alle Lösungen von `6x + 4y = 14`.
 - geschickter: nutze $ggT(a,b) ⋅ kgV(a,b) = a⋅ b$
 - für $ggT(a,b) = 1 ⇒ kgV(a,b) = a ⋅ b$
 
-## Inverses in ℤ/mℤ
+## Additives Inverse in ℤ/mℤ
 
 - Problem: gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
-- Lösung: löse lineare diophantische Gleichung `ax + my = 1` via Algorithmus oben (Partikularlösung reicht).
+- Lösung: `[-a]`
+
+## Multiplikatives Inverse in ℤ/mℤ
+
+- Problem: gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
+- Lösung: löse lineare diophantische Gleichung `ax + my = 1` via Algorithmus oben, nehme eine Partikularlösung für `y`.
 
   Beachte: Inverses existiert <=> `ggT(a, m) = 1`.
 
-  Ggf. normalisiere Partikularlösung auf kanonischen Repräsentanten in `0 ≤ x' < m`.
+  Ggf. normalisiere erhaltenes `y` auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+
+Beispiele:
+
+- $[6]_{13}^{-1} = [11]_{13}$ (in Notation der VL: $(\bar{6})^{-1} = \bar{11}$) 
+- $[15]_{89}^{-1} = [6]_{89}$
+
+## Nullteiler
+
+`zero divisor := Σ(a:R) Σ(b:R) a ≠ 0 ∧ b ≠ 0 ∧ ab = 0` (def. from lecture; usually `0` *is* considered a zero divisor…)
+
+e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 
 ## Bestimme Rest von $a^{\text{große Zahl}} ÷ m$
 
@@ -122,3 +146,61 @@ Wenn a Faktor von LHS und RHS, dann `LHS = RHS ⇔ LHS/a = RHS/a`.
 # Verschiedenes
 
 finite commutative monoids with (∀abc. ab = ac => b=c) are groups
+
+## Alle ungeraden Quadratzahlen $\equiv 1$ mod 8
+
+Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
+
+$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} \Rightarrow q^2 \equiv 1$ (mod 8)
+
+Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 \mid 4n(n+1)$, denn $2 \mid n(n+1)$.
+
+## Satz von Euler, Kleiner Fermat'sche Satz
+
+> Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} \equiv 1$ (mod m).
+
+(Folgt aus: $a, m$ teilerfremd $\Rightarrow \bar{a} \in ℤ_m^\ast \Rightarrow \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1)
+
+> Für $a ∈ ℕ$, $p$ prim gilt: $a^p \equiv a$ (mod p)
+
+Wenn $p \mid a$, trivial $0 \equiv 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p \equiv a^{p-1}a \equiv 1a \equiv a$.
+
+> $\varphi(p^n) = p^{n-1} (p-1)$
+
+## Chinesischer Restsatz
+
+- Problem: Gleichungen $x \equiv a_i$ (mod $m_i$), z. B.
+
+  - $x \equiv 3$ (mod 5)
+  - $x \equiv 1$ (mod 7)
+  - $x \equiv 2$ (mod 11)
+
+  mit $m_i$ paarweise teilerfremd. Gibt es Lösung für $x ∈ ℤ$?
+
+- Ja, es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
+
+  Konstruiere $x := a_1 q_1 q_1' + \dots + a_k q_k q_k'$ mit $q_j := Π_{i≠j} m_i$ und $q_j' = q_j^{-1}$ (in $ℤ/m_iℤ$)
+
+  - $q_1 := 7 ⋅ 11 = 77$
+
+    Zur händischen Berechnung von $q_1'$ erstmal vereinfachen: $\bar{q_1} = \bar{2}$ (in $ℤ/5ℤ$).
+	Dann $\bar{2}^{-1} = \bar{3}$, wähle $q_1' = 3$. (I. Allg. $q_1' ∈ 3 + 5ℤ$ möglich.)
+
+  - $q_2 = 55, q_2' = 6$ analog
+  - $q_3 = 35, q_3' = 6$ analog
+
+  Dann $x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$.
+  Beachte: hier muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch Repräsentenwahl in $ℤ/m_iℤ$ frei.
+  
+  Kanonischer Repräsentant für Lösung (in $ℤ/mℤ$) ist $1443\ \%\ m = 288$.
+
+## Konversation Dezimalsystem $\rightarrow$ b-System
+
+```
+8924 = 743 ⋅ 12 +  8     ^
+ 743 =  61 ⋅ 12 + 11     |
+  61 =   5 ⋅ 12 +  1     | 
+   5 =   0 ⋅ 12 +  5     |
+
+Ergebnis: 51B8
+```
