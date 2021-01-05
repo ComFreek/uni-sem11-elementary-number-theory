@@ -222,6 +222,8 @@ Wenn $p \mid a$, trivial $0 \equiv 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p \
   
   Kanonischer Repräsentant für Lösung (in $ℤ/mℤ$) ist $1443\ \%\ m = 288$.
 
+Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4math.com/mathematics/chinese-remainder-theorem/>
+
 ## Konversation Dezimalsystem $\rightarrow$ b-System
 
 ```
