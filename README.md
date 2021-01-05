@@ -43,31 +43,32 @@ Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausd
 Sei die Gleichung `ax + by = c` mit a, b, c in ℤ gegeben. Gesucht sind `x`, `y`, falls sie existieren.
 
 1. Berechne `ggT(a, b)` mit (erw.) Euklidischen Algorithmus
-2. Falls *nicht* `ggT(a, b) ∤ c` (über Z), dann unlösbar. Terminiere.
-3. Falls `ggT(a, b) ≠ 1`: normalisiere Gleichung durch Division mit `ggT(a, b)`
+2. Falls *nicht* `ggT(a, b) ∤ c` (über ℤ), dann unlösbar. Terminiere.
+3. Falls `ggT(a, b) ≠ 1`: wende Algorithmus rekursiv auf durch `ggT(a, b)` dividierte Gleichung an (sonst Satz 4.18 in Schritt 5 nicht anwendbar)
 
-   => `a/ggT(a, b) x + b/ggT(a, b) y = c/ggT(a,b)`
+   ⇒ `a/ggT(a, b) x + b/ggT(a, b) y = c/ggT(a,b)`
 	 
 	 möglich, da `ggT(a,b) | a,b,c` nach Annahme und da `ggT(a,b)` kein Nullteiler in ℤ ist.
 	 
 	 Lösungsmenge bleibt gleich durch diese Division!
-3. Angenommen `ggT(a, b) = 1 = a x' + b y'`:
-
-   - es gilt: `im(ax + by ∈ ℤ[x,y]) = ggT(a,b)ℤ`
-	 - oder allg.: `im(a₁x₁ + ... + a_nx_n ∈ ℤ[x₁, …, x_n]) = ggT(a₁, …, a_n)ℤ`.
-
-   **Partikularlösung:** sei `ggT(a, b) | c` via q (d.h. `q ggT(a, b) = c`). Dann:
+4. Berechne **Partikularlösung**, angenommen `ggT(a, b) = 1 = a x' + b y'`
+   
+   Sei `ggT(a, b) | c` via q (d.h. `q ⋅ ggT(a, b) = c`). Dann:
 
    - `ax' + by' = ggT(a, b)`
-	 - `a(qx') + b(qy') = q ggT(a, b) = c`
+	 - `a(qx') + b(qy') = q · ggT(a, b) = c`
 	 
 	 => `q (x', y')` Partikularlösung
-	 
-	 **Alle Lösungen:** `L = {(x0 - t*b, y0 + t*a), t ∈ ℤ}` (Satz 4.18)
-	 
-	 Je nach Anwendungsaufgabe, stelle `x0 - t*b >= 0` und `y0 + t*a >= 0` auf; löse nach `t`, um alle (endlich) viele Lösungen zu erschließen.
+5. Berechne **alle Lösungen**
 
-=> Gleichung hat entweder 0 oder unendlich viele Lösungen.
+   - es gilt: `im(ax + by ∈ ℤ[x,y]) = ggT(a,b)ℤ`
+   - oder allg.: `im(a₁x₁ + ... + a_nx_n ∈ ℤ[x₁, …, x_n]) = ggT(a₁, …, a_n)ℤ`.
+
+   `L = {(x0 - t⋅b, y0 + t⋅a), t ∈ ℤ}` (Satz 4.18)
+	 
+	 Je nach Anwendungsaufgabe, stelle `x0 - t⋅b ≥ 0` und `y0 + t·a ≥ 0` auf; löse nach `t`, um alle (endlich) viele Lösungen zu erschließen.
+
+Lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
 
 ### Beispiel 1
 
@@ -81,12 +82,39 @@ Finde alle Lösungen von `6x + 4y = 14`.
 
 1. `ggT(6, 4) = 2 = 1 * 6 - 1 * 4`
 2. `ggT(6, 4) = 2 | 14`, okay!
-3. Normalisierung: `3x + 2y = 7`
-4. Berechne
+3. Normalisierung: `3x + 2y = 7`, rekursiv:
 
-   - `ggT(3, 2) = 1 = 1 * 3 - 1 * 2`
-	 - `7 * (1, -1)` Partikularlösung
-	 - Alle Lösungen: `L = {(7 + t*2, -7 + t*3) | t in ℤ} = {..., (5, -4), ___(7, -7)___, (9, -10), (11, -13), ...}` (dieselben Lösungen von ursprünglicher Gleichung)
+   1. Berechne
+   
+      ```
+      3 = 1·2 + 1
+      2 = 2·2 + 0
+      
+      ⇒ 1 = (1)·(3) + (-1)·(2)
+      ```
+   2. `ggT(3, 2) = 1 | 7`, okay!
+4. Partikularlösung: `7 · (1, -1) = (7, -7)`
+5. Alle Lösungen: `L = {(7 + 2⋅t, -7 - 3⋅t) | t in ℤ} = {…, (5, -4), ___(7, -7)___, (9, -10), (11, -13), …}` (dieselben Lösungen von ursprünglicher Gleichung)
+
+### Beispiel 3 (mit negativen Koeffizienten!)
+
+Finde alle Lösungen von `-51x + 5y = 13`.
+
+1. Sofort klar: `ggT(-51, 5) = ggT(51, 5) = 1`
+   Berechne trotzdem:
+
+   ```
+   -51 = -11 ⋅ 5 + 4
+     5 =   1 ⋅ 4 + 1
+     4 =   4 ⋅ 1 + 0
+   
+   ⇒ 1 = (-1)⋅(-51) + (-10)⋅(5)
+   ```
+
+2. `ggT(-51, 5) = 1 | 13`, d.h. unendlich viele Lösungen existieren!
+3. -/-
+4. Partikularlösung `13 ⋅ (-1, -10) = (-13, -130)`.
+5. Alle Lösungen: `L = {(-13 + 5⋅t, -130 - (-51)⋅t), t ∈ ℤ}`
 
 ## kgV
 
@@ -175,7 +203,7 @@ Wenn $p \mid a$, trivial $0 \equiv 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p \
   - $x \equiv 1$ (mod 7)
   - $x \equiv 2$ (mod 11)
 
-  mit $m_i$ paarweise teilerfremd. Gibt es Lösung für $x ∈ ℤ$?
+  **mit $m_i$ paarweise teilerfremd**. Gibt es Lösung für $x ∈ ℤ$?
 
 - Ja, es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
 
@@ -183,8 +211,8 @@ Wenn $p \mid a$, trivial $0 \equiv 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p \
 
   - $q_1 := 7 ⋅ 11 = 77$
 
-    Zur händischen Berechnung von $q_1'$ erstmal vereinfachen: $\bar{q_1} = \bar{2}$ (in $ℤ/5ℤ$).
-	Dann $\bar{2}^{-1} = \bar{3}$, wähle $q_1' = 3$. (I. Allg. $q_1' ∈ 3 + 5ℤ$ möglich.)
+    In $ℤ/5ℤ$ gilt: $\bar{q_1} = \bar{2}$ und $\bar{2}^{-1} = \bar{3}$.
+    Wähle $q_1' = 3$. (I. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich.)
 
   - $q_2 = 55, q_2' = 6$ analog
   - $q_3 = 35, q_3' = 6$ analog
