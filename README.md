@@ -61,8 +61,8 @@ Sei die Gleichung `ax + by = c` mit a, b, c in ℤ gegeben. Gesucht sind `x`, `y
 	 => `q (x', y')` Partikularlösung
 5. Berechne **alle Lösungen**
 
-   - es gilt: `im(ax + by ∈ ℤ[x,y]) = ggT(a,b)ℤ`
-   - oder allg.: `im(a₁x₁ + ... + a_nx_n ∈ ℤ[x₁, …, x_n]) = ggT(a₁, …, a_n)ℤ`.
+   - es gilt: `im(ax + by ∈ ℤ[x,y]) = ggT(a,b)ℤ`, äquivalent: `aℤ + bℤ = ggT(a,b)ℤ`
+   - oder allg.: `im(a₁x₁ + … + a_nx_n ∈ ℤ[x₁, …, x_n]) = ggT(a₁, …, a_n)ℤ`, äquivalent: `a₁ℤ + … + aₙℤ = ggT(a₁, …, a_n)ℤ`
 
    `L = {(x0 - t⋅b, y0 + t⋅a), t ∈ ℤ}` (Satz 4.18)
 	 
