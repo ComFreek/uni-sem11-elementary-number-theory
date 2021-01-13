@@ -1,6 +1,8 @@
 Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
-Gelesen bis vor Satz 5.4 (S. 70); nächstes Video: https://www.fau.tv/clip/id/3506
+Gelesen bis vor Satz 5.4 (S. 70);
+
+nächstes Video: https://www.fau.tv/clip/id/3584
 
 https://www.fau.tv/clip/id/3542 skipped (WeihnachtsVL, nicht klausurrelevant laut ihr)
 
@@ -21,6 +23,8 @@ Klausur:
 	  b = q' * r + r'
 	- schriftliche Multiplikation
 	- schriftliche Division
+	- Proben nicht vergessen!
+	- Skript erlaubt?
 
 in Klausur: TR erlaubt? Zumindest laut Aufzeichnung 2013. Nutze meinen Casio fx-991DE PLUS mit ":R"-Taste!
 Klausur: RECHENAUFGABEN
@@ -151,19 +155,19 @@ e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 ## Bestimme Rest von $a^{\text{große Zahl}} ÷ m$
 
 1. $[a^{\text{große Zahl}}]_m = [a]_m^{\text{große Zahl}}$
-2. Betrachte $\langle a \rangle$ in ℤ/mℤ:
+2. Betrachte $⟨ a \rangle$ in ℤ/mℤ:
 
    - periodisch mit Länge $\mathrm{ord}(a)$? (<=> a invertierbar)
 
-     z. B. $a = 2, m = 7$: $\langle 2 \rangle = \{1, 2, 4(, 8 = 1)\}$
+     z. B. $a = 2, m = 7$: $⟨ 2 ⟩ = \{1, 2, 4(, 8 = 1)\}$
 
-	 $\Rightarrow \mathrm{ord}(2) = 3$ und $[2]_7^{\text{große Zahl}} = [2]_7^{[\text{große Zahl}]_3}$
+	 $⇒ \mathrm{ord}(2) = 3$ und $[2]_7^{\text{große Zahl}} = [2]_7^{[\text{große Zahl}]_3}$
 
    - stagierend?
   
-     z. B. $a = 5, m = 10$: $\langle 5 \rangle = \{1, 5(, 25 = 5)\}$
+     z. B. $a = 5, m = 10$: $⟨ 5 ⟩ = \{1, 5(, 25 = 5)\}$
 
-	 $\Rightarrow [5]_{10}^{\text{große Zahl}} = [5]_{10}$, da $\text{große Zahl} \geq 1$.
+	 $⇒ [5]_{10}^{\text{große Zahl}} = [5]_{10}$, da $\text{große Zahl} ≥ 1$.
 
 
 
@@ -175,56 +179,65 @@ Wenn a Faktor von LHS und RHS, dann `LHS = RHS ⇔ LHS/a = RHS/a`.
 
 finite commutative monoids with (∀abc. ab = ac => b=c) are groups
 
-## Alle ungeraden Quadratzahlen $\equiv 1$ mod 8
+## Alle ungeraden Quadratzahlen $≡ 1$ mod 8
 
 Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
 
-$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} \Rightarrow q^2 \equiv 1$ (mod 8)
+$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} ⇒ q^2 ≡ 1$ (mod 8)
 
-Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 \mid 4n(n+1)$, denn $2 \mid n(n+1)$.
+Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $2 ∣ n(n+1)$.
 
 ## Satz von Euler, Kleiner Fermat'sche Satz
 
-> Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} \equiv 1$ (mod m).
+> Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
 
-(Folgt aus: $a, m$ teilerfremd $\Rightarrow \bar{a} \in ℤ_m^\ast \Rightarrow \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1)
+(Folgt aus: $a, m$ teilerfremd $⇒ \bar{a} ∈ ℤ_m^∗ ⇒ \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1)
 
-> Für $a ∈ ℕ$, $p$ prim gilt: $a^p \equiv a$ (mod p)
+> Für $a ∈ ℕ$, $p$ prim gilt: $a^p ≡ a$ (mod p)
 
-Wenn $p \mid a$, trivial $0 \equiv 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p \equiv a^{p-1}a \equiv 1a \equiv a$.
+Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a^{p-1}a ≡ 1a ≡ a$.
 
 > $\varphi(p^n) = p^{n-1} (p-1)$
 
 ## Chinesischer Restsatz
 
-- Problem: Gleichungen $x \equiv a_i$ (mod $m_i$), z. B.
+- Problem: Gleichungen $x ≡ a_i$ (mod $m_i$), z. B.
 
-  - $x \equiv 3$ (mod 5)
-  - $x \equiv 1$ (mod 7)
-  - $x \equiv 2$ (mod 11)
+  - $x ≡ 3$ (mod 5)
+  - $x ≡ 1$ (mod 7)
+  - $x ≡ 2$ (mod 11)
 
   **mit $m_i$ paarweise teilerfremd**. Gibt es Lösung für $x ∈ ℤ$?
 
 - Ja, es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
 
-  Konstruiere $x := a_1 q_1 q_1' + \dots + a_k q_k q_k'$ mit $q_j := Π_{i≠j} m_i$ und $q_j' = q_j^{-1}$ (in $ℤ/m_iℤ$)
+  Konstruiere *eine* Lösung $x := a_1 q_1 q_1' + a_2 q_2 q_2' + a_3 q_3 q_3'$ mit
 
   - $q_1 := 7 ⋅ 11 = 77$
 
-    In $ℤ/5ℤ$ gilt: $\bar{q_1} = \bar{2}$ und $\bar{2}^{-1} = \bar{3}$.
-    Wähle $q_1' = 3$. (I. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich.)
+    In $ℤ/5ℤ$: $\bar{q_1} = \bar{2},\quad\bar{2}^{-1} = \bar{3} \Rightarrow$ wähle $q_1' := 3$. (I. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich.)
 
-  - $q_2 = 55, q_2' = 6$ analog
-  - $q_3 = 35, q_3' = 6$ analog
+  - $q_2 = 5 ⋅ 11 = 55$
+  
+    In $ℤ/7ℤ$: $\bar{q_2} = 6,\quad\bar{q_2}^{-1} = \bar{6} \Rightarrow$ wähle $q_2' := 6$
+  - $q_3 = 5 ⋅ 7 = 35$
+
+    In $ℤ/11ℤ$: $\bar{q_3} = 2,\quad\bar{q_3}^{-1} = \bar{6} \Rightarrow$ wähle $q_3' := 6$
 
   Dann $x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$.
+
   Beachte: hier muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch Repräsentenwahl in $ℤ/m_iℤ$ frei.
+
+  Mit $m := m_1 m_2 m_3 = 385$ ist
   
-  Kanonischer Repräsentant für Lösung (in $ℤ/mℤ$) ist $1443\ \%\ m = 288$.
+    - Lösungsmenge $x + mℤ = 1443 + 385ℤ$
+    - kanonischer Repräsentant $x\;\%\;m = 1443\;\%\;385 = 288$.
 
 Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4math.com/mathematics/chinese-remainder-theorem/>
 
 ## Konversation Dezimalsystem $\rightarrow$ b-System
+
+Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
 
 ```
 8924 = 743 ⋅ 12 +  8     ^
@@ -234,3 +247,51 @@ Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4mat
 
 Ergebnis: 51B8
 ```
+
+Probe mit TR! Auf Casio fx-991DE Plus: `Mode -> Pfeil runter -> 3 (Base-N) -> 8924 eingeben -> Dec/Hex/Bin/Oct-Taste drücken`
+
+## Schriftliches Addieren/Subtrahieren zur Basis b
+
+Beispiele:
+
+- $455_6 + 1_6$
+- $210_3 - 1_3$
+- $2302_4 - 233_4 = 2003_4$ (tricky mit Borrow und Carry!!)
+
+## Dezimalbruchentwicklung
+
+Anzahl Stellen und Periodizität in Dezimalentwicklung *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
+
+> **Sätze 7.1&mdash;7.5:** Vollständig gekürzte echte Bruch $\frac{m}{n}$ hat
+> 
+> - endliche Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
+> 
+>   Entwicklung hat Stellen $s := \max(a,b)$.
+>
+> - reinperiodische Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
+>
+>   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
+>
+> - gemischtperiodische Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
+>
+>   Periodenlänge ist die von $\frac{1}{n_2}$
+
+Beispiele:
+
+- Wie sieht Dezimalentwicklung von $\frac{3}{125}$ aus?
+
+  Endliche Dezimalbruchentwicklung:
+  
+  $$\frac{3}{125} = \frac{3}{5^3} = \frac{3⋅2^3}{5^3 ⋅ 2^3} = \frac{24}{10^3} = 0.024$$
+
+- Wie sieht Dezimalentwicklung von $\frac{1}{15}$ aus?
+
+  $15 = 5 ⋅ 3 =: n_1 ⋅ n_2 ⇒ t = 1$ Vorziffern und Periodenlänge $1 = \min_{s \in ℕ} 3 \mid (10^s - 1)$.
+
+  $15 = 0.0\overline{6}$.
+
+- Wie sieht Dezimalentwicklung von $\frac{1}{28}$ aus?
+
+  $28 = 2^2 ⋅ 7 =: n_1 ⋅ n_2 ⇒ t = 2$ Vorziffern und Periodenlänge $6 = \min_{s \in ℕ} 7 \mid (10^s - 1)$.
+
+  $28 = 0.03\overline{571428}$.
