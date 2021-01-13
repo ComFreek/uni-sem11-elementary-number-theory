@@ -34,6 +34,10 @@ Klausur: RECHENAUFGABEN
 
 Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/ggT(a,b)) = 1.
 
+## Umwandlung mod-Gleichung <-> Teilbarkeitsgleichung
+
+- $a \mid b - c \Leftrightarrow b \equiv c$ (mod a)
+
 ## Algorithmen
 
 ## Erweiterter Euklidischer Algorithmus für `ggT(a, b)`
@@ -262,7 +266,7 @@ Beispiele:
 
 Anzahl Stellen und Periodizität in Dezimalentwicklung *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
 
-> **Sätze 7.1&mdash;7.5:** Vollständig gekürzte echte Bruch $\frac{m}{n}$ hat
+> **Sätze 7.1&mdash;7.5:** Vollständig gekürzter echte Bruch $\frac{m}{n}$ hat
 > 
 > - endliche Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
 > 
@@ -295,6 +299,12 @@ Beispiele:
   $28 = 2^2 ⋅ 7 =: n_1 ⋅ n_2 ⇒ t = 2$ Vorziffern und Periodenlänge $6 = \min_{s \in ℕ} 7 \mid (10^s - 1)$.
 
   $28 = 0.03\overline{571428}$.
+
+## Konstruktion periodischer Zahlen
+
+z. B. Periode $z = 173$, Periodenlänge $s = 4$
+
+$$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b} = \frac{z}{10^s - 1} = \frac{173}{9999} = 0.\overline{0173}$$
 
 ## Kettenbruchdarstellung rationaler Zahlen
 
