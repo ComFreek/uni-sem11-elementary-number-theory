@@ -1,6 +1,6 @@
 Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
-Gelesen bis vor Satz 5.4 (S. 70);
+Gelesen bis vor Kapitel 8, Seite 99.
 
 nächstes Video: https://www.fau.tv/clip/id/3584
 
@@ -189,15 +189,15 @@ Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n
 
 ## Satz von Euler, Kleiner Fermat'sche Satz
 
-> Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
+> **Satz (von Euler):** Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
 
 (Folgt aus: $a, m$ teilerfremd $⇒ \bar{a} ∈ ℤ_m^∗ ⇒ \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1)
 
-> Für $a ∈ ℕ$, $p$ prim gilt: $a^p ≡ a$ (mod p)
+> **Satz (kleiner Fermat):** Für $a ∈ ℕ$, $p$ prim gilt: $a^p ≡ a$ (mod p)
 
 Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a^{p-1}a ≡ 1a ≡ a$.
 
-> $\varphi(p^n) = p^{n-1} (p-1)$
+> **Lemma:** $\varphi(p^n) = p^{n-1} (p-1)$
 
 ## Chinesischer Restsatz
 
@@ -235,7 +235,7 @@ Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a
 
 Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4math.com/mathematics/chinese-remainder-theorem/>
 
-## Konversation Dezimalsystem $\rightarrow$ b-System
+## Konvertierung Dezimalsystem $\rightarrow$ b-System
 
 Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
 
@@ -295,3 +295,20 @@ Beispiele:
   $28 = 2^2 ⋅ 7 =: n_1 ⋅ n_2 ⇒ t = 2$ Vorziffern und Periodenlänge $6 = \min_{s \in ℕ} 7 \mid (10^s - 1)$.
 
   $28 = 0.03\overline{571428}$.
+
+## Kettenbruchdarstellung rationaler Zahlen
+
+$$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
+
+Daher: $\frac{203}{95} = [2,7,3,4]$.
+
+Auch mit eukl. Algorithmus möglich:
+
+```
+       ___
+203 = | 2 | ⋅ 95 + 13
+ 95 = | 7 | ⋅ 13 +  4
+ 13 = | 3 | ⋅  4 +  1
+  4 = | 4 | ⋅  1 +  0
+      -----
+```
