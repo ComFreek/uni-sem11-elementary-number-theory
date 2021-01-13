@@ -252,6 +252,8 @@ Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
 Ergebnis: 51B8
 ```
 
+**Nicht mit Euklidischem Algorithmus verwechseln!**
+
 Probe mit TR! Auf Casio fx-991DE Plus: `Mode -> Pfeil runter -> 3 (Base-N) -> 8924 eingeben -> Dec/Hex/Bin/Oct-Taste drücken`
 
 ## Schriftliches Addieren/Subtrahieren zur Basis b
