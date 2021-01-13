@@ -244,10 +244,12 @@ Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4mat
 Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
 
 ```
-8924 = 743 ⋅ 12 +  8     ^
- 743 =  61 ⋅ 12 + 11     |
-  61 =   5 ⋅ 12 +  1     | 
-   5 =   0 ⋅ 12 +  5     |
+                  _____
+8924 = 743 ⋅ 12 + |  8 |  ^
+ 743 =  61 ⋅ 12 + | 11 |  |
+  61 =   5 ⋅ 12 + |  1 |  | 
+   5 =   0 ⋅ 12 + |  5 |  |
+                  -----
 
 Ergebnis: 51B8
 ```
