@@ -245,7 +245,7 @@ Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
 
 ```
                   _____
-8924 = 743 ⋅ 12 + |  8 |  ^
+8924 = 743 ⋅ 12 + |  8 |  ^   least significant digit
  743 =  61 ⋅ 12 + | 11 |  |
   61 =   5 ⋅ 12 + |  1 |  | 
    5 =   0 ⋅ 12 + |  5 |  |
