@@ -2,7 +2,7 @@ Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
 Gelesen bis vor Kapitel 8, Seite 99.
 
-nächstes Video: https://www.fau.tv/clip/id/3584
+nächstes Video: https://www.fau.tv/clip/id/3608 (ab 01:01 h)
 
 https://www.fau.tv/clip/id/3542 skipped (WeihnachtsVL, nicht klausurrelevant laut ihr)
 
@@ -156,23 +156,26 @@ Beispiele:
 
 e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 
-## Bestimme Rest von $a^{\text{große Zahl}} ÷ m$
+## Bestimme Rest von $a^b ÷ m$
 
-1. $[a^{\text{große Zahl}}]_m = [a]_m^{\text{große Zahl}}$
-2. Betrachte $⟨ a \rangle$ in ℤ/mℤ:
+> Wenn $a$ und $m$ teilerfremd, wende Satz von Euler an:
+>
+> $$[a^b]_m = [a]_m^b = [a]_m^{[b]_{\varphi(m)}}$$
 
-   - periodisch mit Länge $\mathrm{ord}(a)$? (<=> a invertierbar)
+Beispiel:
+$$[3^{387}]_{35} = [3]_{35}^{[387]_{24}} = [3]_{35}^{[3]_{24}} = [27]_{35}$$
 
-     z. B. $a = 2, m = 7$: $⟨ 2 ⟩ = \{1, 2, 4(, 8 = 1)\}$
+da $\varphi(35) = \varphi(5 ⋅ 7) = 4 ⋅ 6 = 24$.
 
-	 $⇒ \mathrm{ord}(2) = 3$ und $[2]_7^{\text{große Zahl}} = [2]_7^{[\text{große Zahl}]_3}$
+> Wenn $a$ und $m$ *nicht* teilerfremd, betrachte $\langle [a]_m, ⋅ \rangle$ und identifziere Periodenlänge $s$, sodass
+>
+> $$[a^b]_m = [a]_m^b = [a]_m^{b'}$$
+> wobei $b'$ positiver Repräsentant von $[b]_s$ ist.
 
-   - stagierend?
-  
-     z. B. $a = 5, m = 10$: $⟨ 5 ⟩ = \{1, 5(, 25 = 5)\}$
-
-	 $⇒ [5]_{10}^{\text{große Zahl}} = [5]_{10}$, da $\text{große Zahl} ≥ 1$.
-
+Beispiel:
+$$[2^{18}]_{10} = [2]_{10}^{2} = [4]_{10}$$
+da $\langle [2]_{10} \rangle = \{[1]_{10}, [2]_{10}, [4]_{10}, [8]_{10}, [16]_{10} = [6]_{10}, [12]_{10} = [2]_{10}\}$, d.h. $[2]_{10}^5 = [2]_{10}$. Damit ist $s = 4$.
+Und ein positiver Repräsentant von $18$ in $ℤ/sℤ$ ist eben $2$.
 
 
 ## Gleichungen über Z
@@ -202,6 +205,10 @@ Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n
 Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a^{p-1}a ≡ 1a ≡ a$.
 
 > **Lemma:** $\varphi(p^n) = p^{n-1} (p-1)$
+
+> **Lemma:** (aus Internet!) $\mathrm{ggT}(a,b) = 1 \quad\Longrightarrow\quad \varphi(a ⋅ b) = \varphi(a) ⋅ \varphi(b)$
+>
+> *Beweis (siehe auch [hier](https://math.stackexchange.com/a/192456/85341)):* Nach CRT haben wir $ℤ/(abℤ) ≅ ℤ/aℤ × ℤ/bℤ$. D.h. Anzahl invertierbarer Elemente von LHS ist dieselbe wie von RHS. Ein Element $(x, y)$ von RHS ist invertierbar gdw. $x$ in $ℤ/aℤ$ invertierbar und $y$ in $ℤ/bZ$ invertierbar ist. Es gibt also $\varphi(a) ⋅ \varphi(b)$ viele invertierbare Elemente der RHS.
 
 ## Chinesischer Restsatz
 
@@ -236,6 +243,12 @@ Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a
   
     - Lösungsmenge $x + mℤ = 1443 + 385ℤ$
     - kanonischer Repräsentant $x\;\%\;m = 1443\;\%\;385 = 288$.
+
+Andere Formulierung:
+
+> **Satz (CRT):** Wenn $m_1, …, m_k$ paarweise teilerfremd, dann
+> $$ℤ/m ≅ ℤ/m_1 × ⋯ ℤ/m_k$$
+> als Ringe.
 
 Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4math.com/mathematics/chinese-remainder-theorem/>
 
@@ -272,17 +285,17 @@ Anzahl Stellen und Periodizität in Dezimalentwicklung *nur* abhängig von Nenne
 
 > **Sätze 7.1&mdash;7.5:** Vollständig gekürzter echte Bruch $\frac{m}{n}$ hat
 > 
-> - endliche Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
+> - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
 > 
 >   Entwicklung hat Stellen $s := \max(a,b)$.
 >
-> - reinperiodische Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
+> - *reinperiodische* Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
 >
 >   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
 >
-> - gemischtperiodische Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
+> - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
 >
->   Periodenlänge ist die von $\frac{1}{n_2}$
+>   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
 
 Beispiele:
 
@@ -314,7 +327,7 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 
 $$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
 
-Daher: $\frac{203}{95} = [2,7,3,4]$.
+Daher: $\frac{203}{95} = [2;7,3,4]$.
 
 Auch mit eukl. Algorithmus möglich:
 
@@ -326,3 +339,70 @@ Auch mit eukl. Algorithmus möglich:
   4 = | 4 | ⋅  1 +  0
       -----
 ```
+
+## Teilbarkeit
+
+### Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$
+
+⇒ Endstellenregeln
+
+> **Satz (Endstellenregeln; Formulierung von mir):** Sei $t \mid 10^s$, dann gilt
+>
+> $$z_n…z_0 ≡ z_{s-1}…z_0 \text{ (mod } t\text{)}
+
+*Beweis:* $z_n…z_0 = \sum_{i=0}^n z_i 10^i ≡ \sum_{i=0}^{s-1} z_i 10^i = z_{s-1}…z_0$ (mod $t$).
+
+Beispiele:
+
+- 2, 5, 10 Teiler von 10 ⇒ Teilbarkeit auf letzte Stelle reduzierbar
+- 4, 25, 50, 100 Teiler von 100 ⇒ Teilbarkeit auf letzte zwei Stellen reduzierbar
+
+  $$4 \mid 87954236 ⇔ 4 \mid 36 ⇔ \text{wahr}$$
+- 8, 125, 200, ... Teiler von 1000 ⇒ Teilbarkeit auf letzte drei Stellen reduzierbar
+
+### Quersummenregeln
+
+> **Satz (Quersummenregeln; Formulierung von mir):**
+>
+> Sei $t \mid 9$, dann gilt:
+>
+> $$z_n…z_0 ≡ z_n + … + z_0 \text{ (mod } t\text{)}$$
+>
+> Sei $t \mid 99$, dann gilt:
+>
+> $$z_n…z_0 ≡ z_nz_{n-1} + … + z_1z_0 \text{ (mod } t\text{)}$$
+>
+> Sei $t \mid 999$, dann gilt:
+>
+> $$z_n…z_0 ≡ z_nz_{n-1}z_{n-2} + … + z_2z_1z_0 \text{ (mod } t\text{)}$$
+
+Das sind Quersummen 1-, 2-, 3- und i. Allg. $s$-ter Ordnung. (Um Notation für die Gruppierungen oben zu sparen, setzen wir oBdA. $s \mid (n + 1)$ voraus, ansonsten linkspadde mit Nullen.)
+
+Beispiele:
+
+- $11 \mid 21748 ⇔ 11 \mid (01 + 17 + 48) ⇔ 11 \mid 66 ⇔ \text{wahr}$
+- $111 \mid 21748 ⇔ 111 \mid (021 + 748) = 769 ⇔ \text{falsch}$
+
+*Beweis: (für $t \mid 999$):*
+$$
+\begin{aligned}
+z_n…z_0 = \sum_{i=0}^n z_i 10^i = &(z_n ⋅ 10^2 + z_{n-1} 10^1 + z_{n-2}) ⋅ 10^{(3⋅k)}\\
++ &…\\
++ &(z_5 ⋅ 10^2 + z_4 ⋅ 10^1 + z_3) ⋅ 10^{(3⋅1)}\\
++ &(z_2 ⋅ 10^2 + z_1 10^1 + z_0) ⋅ 10^{(3⋅0)}\\
+\equiv &z_nz_{n-1}z_{n-2} + … + z_5z_4z_3 + z_2z_1z_0 
+\end{aligned}
+$$
+
+> **Satz:** Für $s ≥ 1$ und $t \mid (10^s + 1)$ gilt:
+> $$z_n … z_0 ≡ \text{alt. Quersumme }s\text{-ter Ordnung}\quad\text{(mod } t\text{)}$$
+
+Beispiele:
+
+- $11 \mid 6391 ⇔ 11 \mid (-6 + 3 - 9 + 1) = -11 ⇔ \text{wahr}$
+- $101 \mid 100102 ⇔ 101 \mid (100 + 102) = 202 ⇔ \text{wahr}$
+- $7 \mid 1001$, d.h. 7 teilt Zahl gdw. 7 teilt die alt. Quersumme 3-ter Ordnung
+
+## Teilbarkeit bzgl. 7 und 11
+
+Siehe Skript.
