@@ -430,3 +430,17 @@ Beispiele:
 ## Teilbarkeit bzgl. 7 und 11
 
 Siehe Skript.
+
+---
+
+```
+tolarz | I can use Euclid's algorithm to comput ethe continued fractio nreprsentation                                                                 │ angular_mike
+                     │12:51:07           tolarz | Do the inputs have to have a gcd of 1?                                                                                                       │ antonmol
+                     │12:51:24           tolarz | ie. if I seek the CFR of a/b, can I directly apply Euclid's algorithm ?                                                                      │ anzuof
+                     │12:59:39           tolarz | i think so                                                                                                                                   │ APic
+                     │13:02:01           tolarz | Let (rᵢ₋₂ = qᵢ rᵢ₋₁ + rᵢ)_{i ≥ 0} be the "transcript" of the Euclidean algorithm started on r₋₂ and r₋₁.                                     │ appia[m]
+                     │13:02:22           tolarz | Let g := gcd(r₋₂, r₋₁)                                                                                                                       │ apragmatist
+                     │13:02:55           tolarz | If the Euclidean Algorithm is run on r₋₂/g and r₋₁/g, the resulting transcript is (rᵢ₋₂/g = q_i rᵢ₋₁/g + rᵢ/g).                              │ Arcorann
+                     │13:03:08           tolarz | (Is this true? I only verified by an example.)                                                                                               │ Argorok
+                     │13:03:44           tolarz | Since for the continued fraction representation of a/b is precisely (q_i)_{i >= 0}, it doesn't matter whether a and b are coprime or not.
+                     ```
