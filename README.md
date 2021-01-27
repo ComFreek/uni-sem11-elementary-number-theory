@@ -52,13 +52,18 @@ Sei die Gleichung `ax + by = c` mit a, b, c in ℤ gegeben. Gesucht sind `x`, `y
 
 1. Berechne `ggT(a, b)` mit (erw.) Euklidischen Algorithmus
 2. Falls *nicht* `ggT(a, b) ∤ c` (über ℤ), dann unlösbar. Terminiere.
-3. Falls `ggT(a, b) ≠ 1`: wende Algorithmus rekursiv auf durch `ggT(a, b)` dividierte Gleichung an (sonst Satz 4.18 in Schritt 5 nicht anwendbar)
+3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
+   
+   Falls `ggT(a, b) ≠ 1`, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
+   $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
 
-   ⇒ `a/ggT(a, b) x + b/ggT(a, b) y = c/ggT(a,b)`
-	 
-	 möglich, da `ggT(a,b) | a,b,c` nach Annahme und da `ggT(a,b)` kein Nullteiler in ℤ ist.
-	 
-	 Lösungsmenge bleibt gleich durch diese Division!
+   Möglich, da `ggT(a,b) | a,b,c` nach Annahme und da `ggT(a,b)` kein Nullteiler in ℤ ist.
+   
+   Die Bezout-Koeffzienten sind *dieselben*, denn:
+   $1 = \frac{\mathrm{ggT}(a,b)}{\mathrm{ggT}(a, b)} = \frac{a}{\mathrm{ggT}(a, b)}x^\ast + \frac{b}{\mathrm{ggT}(a, b)}y^\ast$
+   
+   Insgesamt nötig, da sonst Satz 4.18 in Schritt 5 nicht anwendbar.
+
 4. Berechne **Partikularlösung**, angenommen `ggT(a, b) = 1 = a x' + b y'`
    
    Sei `ggT(a, b) | c` via q (d.h. `q ⋅ ggT(a, b) = c`). Dann:
@@ -138,17 +143,19 @@ Finde alle Lösungen von `-51x + 5y = 13`.
 
 ## Multiplikatives Inverse in ℤ/mℤ
 
-- Problem: gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
-- Lösung: löse lineare diophantische Gleichung `ax + my = 1` via Algorithmus oben, nehme eine Partikularlösung für `y`.
+- **Problem:** gesucht ist Inverses von $\bar{a} ∈ ℤ/mℤ$, $0 \leq a < m$!!!
+- **Lösung:**
+  - Inverses existiert gdw. $\mathrm{ggT}(a, m) = 1$.
+  - Löse $ax + my = 1$ via Algorithmus oben, nehme Partikularlösung $x^\ast$.
+  - Ggf. normalisiere erhaltenes $x^\ast$ auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
 
-  Beachte: Inverses existiert <=> `ggT(a, m) = 1`.
-
-  Ggf. normalisiere erhaltenes `y` auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+- Begründung: *Eine* Lösung ist $x$, sodass $ax \equiv 1 \text{ (mod } m \text{)} \Leftrightarrow m \mid ax - 1 \Leftrightarrow \exists y.\ ax - my = 1 \Leftrightarrow \exists y.\ ax + my = 1$
+  
 
 Beispiele:
 
-- $[6]_{13}^{-1} = [11]_{13}$ (in Notation der VL: $(\bar{6})^{-1} = \bar{11}$) 
-- $[15]_{89}^{-1} = [6]_{89}$
+- In ℤ/13ℤ: $\overline{6}^{-1} = \overline{11}$
+- In ℤ/89ℤ: $\overline{15}^{-1} = \overline{6}$
 
 ## Nullteiler
 
@@ -254,17 +261,18 @@ Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4mat
 
 ## Konvertierung Dezimalsystem $\rightarrow$ b-System
 
-Immer durch $b$ teilen, Reste ergeben $b$-Darstellung:
+Immer durch $b$ teilen, Reste ergeben $b$-Darstellung.
 
 ```
+Gesucht: 8924 zur Basis 12
                   _____
 8924 = 743 ⋅ 12 + |  8 |  ^   least significant digit
  743 =  61 ⋅ 12 + | 11 |  |
   61 =   5 ⋅ 12 + |  1 |  | 
    5 =   0 ⋅ 12 + |  5 |  |
-                  -----
-
-Ergebnis: 51B8
+         ^        -----
+         |- terminiert bei 0
+Ergebnis: 51B8₍₁₂₎
 ```
 
 **Nicht mit Euklidischem Algorithmus verwechseln!**
@@ -283,7 +291,7 @@ Beispiele:
 
 Anzahl Stellen und Periodizität in Dezimalentwicklung *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
 
-> **Sätze 7.1&mdash;7.5:** Vollständig gekürzter echte Bruch $\frac{m}{n}$ hat
+> **Sätze 7.1&mdash;7.5:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
 > 
 > - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
 > 
@@ -325,20 +333,36 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 
 ## Kettenbruchdarstellung rationaler Zahlen
 
-$$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
+- **Problem:** gesucht ist Kettenbruchdarstellung von $\frac{a}{b}$
+- Wenn $a > b$: wende euklid. Algorithmus an
 
-Daher: $\frac{203}{95} = [2;7,3,4]$.
+  (es ist egal, ob $a$, $b$ teilerfremd oder nicht)
 
-Auch mit eukl. Algorithmus möglich:
+   ```
+   Beispiel: 203/95
+          ___
+   203 = | 2 | ⋅ 95 + 13
+    95 = | 7 | ⋅ 13 +  4
+    13 = | 3 | ⋅  4 +  1
+     4 = | 4 | ⋅  1 +  0
+         -----
+  
+   Darstellung: [2; 7, 3, 4]
+   ```
 
-```
-       ___
-203 = | 2 | ⋅ 95 + 13
- 95 = | 7 | ⋅ 13 +  4
- 13 = | 3 | ⋅  4 +  1
-  4 = | 4 | ⋅  1 +  0
-      -----
-```
+   $$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
+
+   (terminiert wenn am Ende Bruch mit $1$ im Zähler wie $\frac{1}{4}$, aka Stambruch)
+
+   Daher: $\frac{203}{95} = [2;7,3,4]$.
+
+- Wenn $a < b$: bereche Darstellung für $\frac{b}{a}$ und prepende 0
+
+  ```
+  Beispiel: 95/203
+
+  wie oben: 203 /  95 = [2; 7, 3, 4]
+  daher:     95 / 203 = [0; 2, 7, 3, 4]
 
 ## Teilbarkeit
 
