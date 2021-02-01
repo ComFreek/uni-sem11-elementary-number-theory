@@ -1,3 +1,5 @@
+Klausurraum: <https://univis.fau.de/formbot/dsc_3Danew_2Froom_view_26rooms_3Dphil_2Fsephil_2Flgcrn_2Fhsewf_2F1132_26dir_3Dphil_2Fsephil_2Flgcrn_2Fhsewf_26ref_3Droom>
+
 Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
 Gelesen bis vor Kapitel 8, Seite 99.
