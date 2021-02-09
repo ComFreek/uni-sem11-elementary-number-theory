@@ -63,7 +63,7 @@ Sei die Gleichung $ax + by = c$ mit $a, b, c ∈ ℤ$ gegeben. Gesucht ist Lösu
 3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
    
    Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
-   $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
+   $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$d
 
    Möglich, da $\mathrm{ggT}(a, b) \mid a,b,c$ nach Annahme und da $\mathrm{ggT}(a, b)$ kein Nullteiler in ℤ ist.
    
