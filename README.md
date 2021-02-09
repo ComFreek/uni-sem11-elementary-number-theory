@@ -373,9 +373,7 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 
 ### Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$
 
-⇒ Endstellenregeln
-
-> **Satz (Endstellenregeln; Formulierung von mir):** Sei $t \mid 10^s$, dann gilt
+> **Satz (Endstellenregeln; Generalisierung der Sätze 8.1, 8.3):** Sei $t \mid 10^s$, dann gilt
 >
 > $$z_n…z_0 ≡ z_{s-1}…z_0 \text{ (mod } t\text{)}
 
@@ -389,25 +387,21 @@ Beispiele:
   $$4 \mid 87954236 ⇔ 4 \mid 36 ⇔ \text{wahr}$$
 - 8, 125, 200, ... Teiler von 1000 ⇒ Teilbarkeit auf letzte drei Stellen reduzierbar
 
-## Vor Abgabe der Klausur
 
-- Sind überall Striche über Restklassenzahlen?
-- Überall Proben berechnet? Insbesondere auch bei CRT?
-- Überall Antwortsätze geschrieben?
 
 ### Quersummenregeln
 
-> **Satz (Quersummenregeln; Formulierung von mir):**
+> **Satz (Quersummenregeln; Sätze 8.4, 8.5, und Paragraph danach im Skript):**
 >
-> Sei $t \mid 9$, dann gilt:
+> Für $t \mid 9$:
 >
 > $$z_n…z_0 ≡ z_n + … + z_0 \text{ (mod } t\text{)}$$
 >
-> Sei $t \mid 99$, dann gilt:
+> Für $t \mid 99$:
 >
 > $$z_n…z_0 ≡ z_nz_{n-1} + … + z_1z_0 \text{ (mod } t\text{)}$$
 >
-> Sei $t \mid 999$, dann gilt:
+> Für $t \mid 999$:
 >
 > $$z_n…z_0 ≡ z_nz_{n-1}z_{n-2} + … + z_2z_1z_0 \text{ (mod } t\text{)}$$
 
@@ -429,18 +423,32 @@ z_n…z_0 = \sum_{i=0}^n z_i 10^i = &(z_n ⋅ 10^2 + z_{n-1} 10^1 + z_{n-2}) ⋅
 \end{aligned}
 $$
 
-> **Satz:** Für $s ≥ 1$ und $t \mid (10^s + 1)$ gilt:
-> $$z_n … z_0 ≡ \text{alt. Quersumme }s\text{-ter Ordnung}\quad\text{(mod } t\text{)}$$
+> **Satz (Alternierende Quersummenregel, Sätze 8.6, 8.7 + eigene Generalisierung):**
+>
+> Für $t \mid 11 = 10^1 + 1$:
+> $$z_n \ldots z_0 \equiv \ldots - z_3 + z_2 - z_1 + z_0\text{ (mod } t\text{)}$$
+>
+> Für $t \mid 101 = 10^2 + 1$:
+> $$z_n \ldots z_0 \equiv \ldots + z_5z_4 - z_3z_2 + z_1z_0\text{ (mod } t\text{)}$$
+>
+> Allgemein für $t \mid (10^s + 1)$:
+> $$z_n … z_0 ≡ \text{alt. Quersumme }s\text{-ter Ordnung}\ \text{(mod } t\text{)}$$
 
 Beispiele:
 
 - $11 \mid 6391 ⇔ 11 \mid (-6 + 3 - 9 + 1) = -11 ⇔ \text{wahr}$
-- $101 \mid 100102 ⇔ 101 \mid (100 + 102) = 202 ⇔ \text{wahr}$
-- $7 \mid 1001$, d.h. 7 teilt Zahl gdw. 7 teilt die alt. Quersumme 3-ter Ordnung
+- $101 \mid 691244 ⇔ 101 \mid (69 - 12 + 44) = 101 ⇔ \text{wahr}$
+- $7 \mid 1001$, daher: $7 \mid z ⇔ 7 \mid \text{alt. Quersumme 3-ter Ordnung}$
 
 ## Teilbarkeit bzgl. 7 und 11
 
 Siehe Skript.
+
+## Vor Abgabe der Klausur
+
+- Sind überall Striche über Restklassenzahlen?
+- Überall Proben berechnet? Insbesondere auch bei CRT?
+- Überall Antwortsätze geschrieben?
 
 ---
 
