@@ -290,21 +290,25 @@ Beispiele:
 
 ## Dezimalbruchentwicklung
 
-Anzahl Stellen und Periodizität in Dezimalentwicklung *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
+- Problem: bestimme Art der Dezimalbruchentwicklung (endlich, rein-/gemischtperiodisch) eines gegebenen Bruches $\frac{m}{n}$
+- Lösung:
+ 
+  1. Sind Zähler und Nenner teilerfremd? Bestime $\mathrm{ggT}(m, n)$ mittels Euklidischem Algorithmus und kürze damit
+  2. Art *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
 
-> **Sätze 7.1&mdash;7.5:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
-> 
-> - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
-> 
->   Entwicklung hat Stellen $s := \max(a,b)$.
->
-> - *reinperiodische* Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
->
->   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
->
-> - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
->
->   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
+     > **Sätze 7.1, 7.2 & 7.4, 7.6:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
+     > 
+     > - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b
+     > 
+     >   Entwicklung hat Stellen $s := \max(a,b)$.
+     >
+     > - *reinperiodische* Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
+     >
+     >   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
+     >
+     > - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
+     >
+     >   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
 
 Beispiele:
 
