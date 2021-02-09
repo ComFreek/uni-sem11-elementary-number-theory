@@ -48,40 +48,39 @@ Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/gg
 
 Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausdrücken.
 
-## Lösungen von `ax + by = c` mit (x, y) in ℤ²
+## Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$
 
-Sei die Gleichung `ax + by = c` mit a, b, c in ℤ gegeben. Gesucht sind `x`, `y`, falls sie existieren.
+Sei die Gleichung $ax + by = c$ mit $a, b, c ∈ ℤ$ gegeben. Gesucht ist Lösungsmenge von $(x, y)$ Paaren.
 
-1. Berechne `ggT(a, b)` mit (erw.) Euklidischen Algorithmus
-2. Falls *nicht* `ggT(a, b) ∤ c` (über ℤ), dann unlösbar. Terminiere.
+1. Berechne $\mathrm{ggT}(a, b)$ mit erw. Euklidischen Algorithmus
+2. Falls *nicht* $\mathrm{ggT}(a, b) ∤ c$, dann unlösbar nach Satz 4.15. Terminiere.
+
+   > **Satz 4.15:** Es gilt:
+   > $$\mathrm{im}(\underbrace{ax + by}_{∈ ℤ[x,y]}) = \mathrm{ggT}(a, b)ℤ$$
+   >
+   > $$\mathrm{im}(\underbrace{a₁x₁ + … + a_nx_n}_{∈ ℤ[x₁, …, x_n]}) = \mathrm{ggT}(a₁, …, a_n)ℤ$$
+
 3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
    
-   Falls `ggT(a, b) ≠ 1`, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
+   Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
    $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
 
-   Möglich, da `ggT(a,b) | a,b,c` nach Annahme und da `ggT(a,b)` kein Nullteiler in ℤ ist.
+   Möglich, da $\mathrm{ggT}(a, b) \mid a,b,c$ nach Annahme und da $\mathrm{ggT}(a, b)$ kein Nullteiler in ℤ ist.
    
    Die Bezout-Koeffzienten sind *dieselben*, denn:
    $1 = \frac{\mathrm{ggT}(a,b)}{\mathrm{ggT}(a, b)} = \frac{a}{\mathrm{ggT}(a, b)}x^\ast + \frac{b}{\mathrm{ggT}(a, b)}y^\ast$
    
    Insgesamt nötig, da sonst Satz 4.18 in Schritt 5 nicht anwendbar.
 
-4. Berechne **Partikularlösung**, angenommen `ggT(a, b) = 1 = a x' + b y'`
+4. Berechne **Partikularlösung**, angenommen $ax^\ast + by^\ast = 1 = \mathrm{ggT}(a,b)$
    
-   Sei `ggT(a, b) | c` via q (d.h. `q ⋅ ggT(a, b) = c`). Dann:
+   Sei $\mathrm{ggT}(a,b) \mid c$ via $q$ (d.h. $q ⋅ \mathrm{ggT}(a,b) = c$).
 
-   - `ax' + by' = ggT(a, b)`
-	 - `a(qx') + b(qy') = q · ggT(a, b) = c`
+   $\Rightarrow a(qx^\ast) + b(qy^\ast) = q · \mathrm{ggT}(a,b) = c$<br>
+	 $\Rightarrow (qx^\ast, qy^\ast)$ Partikularlösung
+5. Berechne **alle Lösungen**: $\mathcal{L} = \{(q x^\ast - t⋅b, q y^\ast + t⋅a), t ∈ ℤ\}$ (Satz 4.18)
 	 
-	 => `q (x', y')` Partikularlösung
-5. Berechne **alle Lösungen**
-
-   - es gilt: `im(ax + by ∈ ℤ[x,y]) = ggT(a,b)ℤ`, äquivalent: `aℤ + bℤ = ggT(a,b)ℤ`
-   - oder allg.: `im(a₁x₁ + … + a_nx_n ∈ ℤ[x₁, …, x_n]) = ggT(a₁, …, a_n)ℤ`, äquivalent: `a₁ℤ + … + aₙℤ = ggT(a₁, …, a_n)ℤ`
-
-   `L = {(x0 - t⋅b, y0 + t⋅a), t ∈ ℤ}` (Satz 4.18)
-	 
-	 Je nach Anwendungsaufgabe, stelle `x0 - t⋅b ≥ 0` und `y0 + t·a ≥ 0` auf; löse nach `t`, um alle (endlich) viele Lösungen zu erschließen.
+	 Je nach Anwendungsaufgabe, stelle $q x^\ast - t⋅b ≥ 0$ und $q y^\ast + t⋅a ≥ 0$ auf; löse nach $t$, um alle (endlich) viele Lösungen zu erschließen.
 
 Lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
 
@@ -130,6 +129,8 @@ Finde alle Lösungen von `-51x + 5y = 13`.
 3. -/-
 4. Partikularlösung `13 ⋅ (-1, -10) = (-13, -130)`.
 5. Alle Lösungen: `L = {(-13 + 5⋅t, -130 - (-51)⋅t), t ∈ ℤ}`
+
+
 
 ## kgV
 
@@ -221,7 +222,7 @@ Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a
 
 ## Chinesischer Restsatz
 
-- Problem: Gleichungen $x ≡ a_i$ (mod $m_i$), z. B.
+- Problem: Gleichungen der Form $x ≡ a_i$ (mod $m_i$)
 
   - $x ≡ 3$ (mod 5)
   - $x ≡ 1$ (mod 7)
@@ -235,7 +236,7 @@ Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a
 
   - $q_1 := 7 ⋅ 11 = 77$
 
-    In $ℤ/5ℤ$: $\bar{q_1} = \bar{2},\quad\bar{2}^{-1} = \bar{3} \Rightarrow$ wähle $q_1' := 3$. (I. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich.)
+    In $ℤ/5ℤ$: $\bar{q_1} = \bar{2},\quad\bar{2}^{-1} = \bar{3} \Rightarrow$ wähle $q_1' := 3$. (i. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich)
 
   - $q_2 = 5 ⋅ 11 = 55$
   
@@ -244,22 +245,20 @@ Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a
 
     In $ℤ/11ℤ$: $\bar{q_3} = 2,\quad\bar{q_3}^{-1} = \bar{6} \Rightarrow$ wähle $q_3' := 6$
 
-  Dann $x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$.
+  $⇒ x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$
 
-  Beachte: hier muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch Repräsentenwahl in $ℤ/m_iℤ$ frei.
+  > Beachte: hier muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch beliebige Repräsentenwahl in $ℤ/m_iℤ$ möglich.
 
-  Mit $m := m_1 m_2 m_3 = 385$ ist
-  
-    - Lösungsmenge $x + mℤ = 1443 + 385ℤ$
-    - kanonischer Repräsentant $x\;\%\;m = 1443\;\%\;385 = 288$.
+  Mit $m := m_1 m_2 m_3 = 385$ ist Lösungsmenge $\mathcal{L} = x + mℤ = 1443 + 385ℤ = 288 + 385ℤ$.<br>
+  Hier ist $x\;\%\;m = 1443\;\%\;385 = 288$ kanonischer Repräsentant.
 
 Andere Formulierung:
 
 > **Satz (CRT):** Wenn $m_1, …, m_k$ paarweise teilerfremd, dann
-> $$ℤ/m ≅ ℤ/m_1 × ⋯ ℤ/m_k$$
+> $$ℤ/m ≅ ℤ/m_1 × ⋯ × ℤ/m_k$$
 > als Ringe.
 
-Erweiterter CRT mit erlaubten Koeffizienten vor $x$: siehe <https://www.dave4math.com/mathematics/chinese-remainder-theorem/>
+Falls in Gleichungen Koeffizienten vor $x$ auftauchen: wende [erweiterten CRT](https://www.dave4math.com/mathematics/chinese-remainder-theorem/) an.
 
 ## Konvertierung Dezimalsystem $\rightarrow$ b-System
 
@@ -385,6 +384,12 @@ Beispiele:
 
   $$4 \mid 87954236 ⇔ 4 \mid 36 ⇔ \text{wahr}$$
 - 8, 125, 200, ... Teiler von 1000 ⇒ Teilbarkeit auf letzte drei Stellen reduzierbar
+
+## Vor Abgabe der Klausur
+
+- Sind überall Striche über Restklassenzahlen?
+- Überall Proben berechnet? Insbesondere auch bei CRT?
+- Überall Antwortsätze geschrieben?
 
 ### Quersummenregeln
 
