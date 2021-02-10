@@ -12,39 +12,46 @@ Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausd
 
 # Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$
 
-Sei die Gleichung $ax + by = c$ mit $a, b, c ∈ ℤ$ gegeben. Gesucht ist Lösungsmenge von $(x, y)$ Paaren.
+> **Problem:** gesucht ist Lösungsmenge von $ax + by = c$ über ℤ² mit $a, b, c ∈ ℤ$ gegeben.
 
-1. Berechne $\mathrm{ggT}(a, b)$ mit erw. Euklidischen Algorithmus
-2. Falls *nicht* $\mathrm{ggT}(a, b) ∤ c$, dann unlösbar nach Satz 4.15. Terminiere.
+<!---->
 
-   > **Satz 4.15:** Es gilt:
-   > $$\mathrm{im}(\underbrace{ax + by}_{∈ ℤ[x,y]}) = \mathrm{ggT}(a, b)ℤ$$
-   >
-   > $$\mathrm{im}(\underbrace{a₁x₁ + … + a_nx_n}_{∈ ℤ[x₁, …, x_n]}) = \mathrm{ggT}(a₁, …, a_n)ℤ$$
-
-3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
-   
-   Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
-   $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
-
-   Möglich, da $\mathrm{ggT}(a, b) \mid a,b,c$ nach Annahme und da $\mathrm{ggT}(a, b)$ kein Nullteiler in ℤ ist.
-   
-   Die Bezout-Koeffzienten sind *dieselben*, denn:
+> **Lösung:** 
+> 1. Berechne $\mathrm{ggT}(a, b)$ mit erw. Euklidischen Algorithmus
+>
+> 2. Falls *nicht* $\mathrm{ggT}(a, b) ∤ c$, dann unlösbar nach Satz 4.15. Terminiere.
+>
+>    > **Satz 4.15:** Es gilt:
+>    > $$\mathrm{im}(\underbrace{ax + by}_{∈ ℤ[x,y]}) = \mathrm{ggT}(a, b)ℤ$$
+>
+> $$\mathrm{im}(\underbrace{a₁x₁ + … + a_nx_n}_{∈ ℤ[x₁, …, x_n]}) = \mathrm{ggT}(a₁, …, a_n)ℤ$$
+>
+> 3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
+>   
+>    Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
+>    $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
+>
+>    Möglich, da $\mathrm{ggT}(a, b) \mid a,b,c$ nach Annahme und da $\mathrm{ggT}(a, b)$ kein Nullteiler in ℤ ist.
+> 
+>    Die Bezout-Koeffzienten sind *dieselben*, denn:
    $1 = \frac{\mathrm{ggT}(a,b)}{\mathrm{ggT}(a, b)} = \frac{a}{\mathrm{ggT}(a, b)}x^\ast + \frac{b}{\mathrm{ggT}(a, b)}y^\ast$
-   
-   Insgesamt nötig, da sonst Satz 4.18 in Schritt 5 nicht anwendbar.
+> 
+>    Insgesamt nötig, da sonst Satz 4.18 in Schritt 5 nicht anwendbar.
+>
+> 4. Berechne **Partikularlösung**, angenommen $ax^\ast + by^\ast = 1 = \mathrm{ggT}(a,b)$
+> 
+>    Sei $\mathrm{ggT}(a,b) \mid c$ via $q$ (d.h. $q ⋅ \mathrm{ggT}(a,b) = c$).
+>
+>    $\Rightarrow a(qx^\ast) + b(qy^\ast) = q · \mathrm{ggT}(a,b) = c$<br>
+> 	 $\Rightarrow (x_0, y_0) := (qx^\ast, qy^\ast)$ Partikularlösung
+>
+> 5. Berechne **alle Lösungen**: $\mathcal{L} = \{(x_0 + t⋅b,\;\;y_0 - t⋅a) \mid t ∈ ℤ\}$ (Satz 4.18)
+>
+>	 Je nach Anwendungsaufgabe, stelle $x_0 + t⋅b ≥ 0$ und $y_0 - t⋅a ≥ 0$ auf; löse nach $t$, um alle (endlich) viele Lösungen zu erschließen.
 
-4. Berechne **Partikularlösung**, angenommen $ax^\ast + by^\ast = 1 = \mathrm{ggT}(a,b)$
-   
-   Sei $\mathrm{ggT}(a,b) \mid c$ via $q$ (d.h. $q ⋅ \mathrm{ggT}(a,b) = c$).
+<!---->
 
-   $\Rightarrow a(qx^\ast) + b(qy^\ast) = q · \mathrm{ggT}(a,b) = c$<br>
-	 $\Rightarrow (x_0, y_0) := (qx^\ast, qy^\ast)$ Partikularlösung
-5. Berechne **alle Lösungen**: $\mathcal{L} = \{(x_0 + t⋅b,\;\;y_0 - t⋅a) \mid t ∈ ℤ\}$ (Satz 4.18)
-	 
-	 Je nach Anwendungsaufgabe, stelle $x_0 + t⋅b ≥ 0$ und $y_0 - t⋅a ≥ 0$ auf; löse nach $t$, um alle (endlich) viele Lösungen zu erschließen.
-
-Lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
+> **Merke:** Eine lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
 
 ## Beispiel 1
 
@@ -309,9 +316,13 @@ Beispiele:
 
 ## Konstruktion periodischer Zahlen
 
-z. B. Periode $z = 173$, Periodenlänge $s = 4$
+> **Problem:** stelle $0.\overline{0173}$ als Bruch dar
 
-$$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b} = \frac{z}{10^s - 1} = \frac{173}{9999} = 0.\overline{0173}$$
+<!---->
+
+> **Lösung:** Sei $z = 173$ die Periode und $s = 4$ die Periodenlänge $s = 4$. Suche also $a,b$, sodass
+> $$\frac{a}{b} \cdot 10^s \overset{!}{=} z + \frac{a}{b}$$
+> $$\Leftrightarrow\quad \frac{a}{b} = \frac{z}{10^s - 1} = \frac{173}{9999} = 0.\overline{0173}$$
 
 ## Kettenbruchdarstellung rationaler Zahlen
 
@@ -332,14 +343,12 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 >   4 = | 4 | ⋅  1 +  0
 >       -----
 >  
-> Darstellung: [2; 7, 3, 4]
+> Darstellung: 203/95 = [2; 7, 3, 4]
 > ```
 >
 > $$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
 >
-> (terminiert wenn am Ende Bruch mit $1$ im Zähler wie $\frac{1}{4}$, aka Stambruch)
->
-> Daher: $\frac{203}{95} = [2;7,3,4]$.
+> Alternative Methode: manuell Kettenbrüche erzeugen, bis am Ende Bruch mit $1$ im Zähler wie $\frac{1}{4}$ (aka Stambruch).
 
 <!---->
 
@@ -362,7 +371,7 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 
 *Beweis:* $z_n…z_0 = \sum_{i=0}^n z_i 10^i ≡ \sum_{i=0}^{s-1} z_i 10^i = z_{s-1}…z_0$ (mod $t$).
 
-Beispiele:
+**Beispiele:**
 
 - 2, 5, 10 Teiler von 10 ⇒ Teilbarkeit auf letzte Stelle reduzierbar
 - 4, 25, 50, 100 Teiler von 100 ⇒ Teilbarkeit auf letzte zwei Stellen reduzierbar
@@ -388,7 +397,7 @@ Beispiele:
 
 Das sind Quersummen 1-, 2-, 3- und i. Allg. $s$-ter Ordnung. (Um Notation für die Gruppierungen oben zu sparen, setzen wir oBdA. $s \mid (n + 1)$ voraus, ansonsten linkspadde mit Nullen.)
 
-Beispiele:
+**Beispiele:**
 
 - $11 \mid 21748 ⇔ 11 \mid (01 + 17 + 48) ⇔ 11 \mid 66 ⇔ \text{wahr}$
 - $111 \mid 21748 ⇔ 111 \mid (021 + 748) = 769 ⇔ \text{falsch}$
@@ -415,7 +424,7 @@ $$
 > Allgemein für $t \mid (10^s + 1)$:
 > $$z_n … z_0 ≡ \text{alt. Quersumme }s\text{-ter Ordnung}\ \text{(mod } t\text{)}$$
 
-Beispiele:
+**Beispiele:**
 
 - $11 \mid 6391 ⇔ 11 \mid (-6 + 3 - 9 + 1) = -11 ⇔ \text{wahr}$
 - $101 \mid 691244 ⇔ 101 \mid (69 - 12 + 44) = 101 ⇔ \text{wahr}$
@@ -427,29 +436,13 @@ Siehe Skript.
 
 # Vor Abgabe der Klausur
 
-- Sind überall Striche über Restklassenzahlen?
+- Sind überall Striche für Restklassen?
 - Überall Proben berechnet? Insbesondere auch bei CRT?
 - Überall Antwortsätze geschrieben?
 
 ---
 
-```
-tolarz | I can use Euclid's algorithm to comput ethe continued fractio nreprsentation                                                                 │ angular_mike
-                     │12:51:07           tolarz | Do the inputs have to have a gcd of 1?                                                                                                       │ antonmol
-                     │12:51:24           tolarz | ie. if I seek the CFR of a/b, can I directly apply Euclid's algorithm ?                                                                      │ anzuof
-                     │12:59:39           tolarz | i think so                                                                                                                                   │ APic
-                     │13:02:01           tolarz | Let (rᵢ₋₂ = qᵢ rᵢ₋₁ + rᵢ)_{i ≥ 0} be the "transcript" of the Euclidean algorithm started on r₋₂ and r₋₁.                                     │ appia[m]
-                     │13:02:22           tolarz | Let g := gcd(r₋₂, r₋₁)                                                                                                                       │ apragmatist
-                     │13:02:55           tolarz | If the Euclidean Algorithm is run on r₋₂/g and r₋₁/g, the resulting transcript is (rᵢ₋₂/g = q_i rᵢ₋₁/g + rᵢ/g).                              │ Arcorann
-                     │13:03:08           tolarz | (Is this true? I only verified by an example.)                                                                                               │ Argorok
-                     │13:03:44           tolarz | Since for the continued fraction representation of a/b is precisely (q_i)_{i >= 0}, it doesn't matter whether a and b are coprime or not.
-                     ```
 
-## Verschiedenes
-
-Gleichungen über Z: wenn a Faktor von LHS und RHS, dann `LHS = RHS ⇔ LHS/a = RHS/a`.
-
-finite commutative monoids with (∀abc. ab = ac => b=c) are groups
 
 ## Alle ungeraden Quadratzahlen $≡ 1$ mod 8
 
