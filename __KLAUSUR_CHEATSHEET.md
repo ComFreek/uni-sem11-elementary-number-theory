@@ -103,20 +103,24 @@ Finde alle Lösungen von `-51x + 5y = 13`.
 
 ## Additives Inverse in ℤ/mℤ
 
-**Problem:** gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
+> **Problem:** gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
 
-**Lösung**: `[-a]`
+<!---->
+
+> **Lösung**: `[-a]`
 
 ## Multiplikatives Inverse in ℤ/mℤ
 
-**Problem:** gesucht ist Inverses von $\bar{a} ∈ ℤ/mℤ$, $0 \leq a < m$!!!
+> **Problem:** gesucht ist Inverses von $\bar{a} ∈ ℤ/mℤ$, $0 \leq a < m$!!!
 
-**Lösung:**
-  - Inverses existiert gdw. $\mathrm{ggT}(a, m) = 1$.
-  - Löse $ax + my = 1$ via Algorithmus oben, nehme Partikularlösung $x^\ast$.
-  - Ggf. normalisiere erhaltenes $x^\ast$ auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+<!---->
 
-- Begründung: *Eine* Lösung ist $x$, sodass $ax \equiv 1 \text{ (mod } m \text{)} \Leftrightarrow m \mid ax - 1 \Leftrightarrow \exists y.\ ax - my = 1 \Leftrightarrow \exists y.\ ax + my = 1$
+> **Lösung:**
+> - Inverses existiert gdw. $\mathrm{ggT}(a, m) = 1$.
+> - Löse $ax + my = 1$ via Algorithmus oben, nehme Partikularlösung $x^\ast$.
+> - Ggf. normalisiere erhaltenes $x^\ast$ auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+>
+> - Begründung: *Eine* Lösung ist $x$, sodass $ax \equiv 1 \text{ (mod } m \text{)} \Leftrightarrow m \mid ax - 1 \Leftrightarrow \exists y.\ ax - my = 1 \Leftrightarrow \exists y.\ ax + my = 1$
   
 **Beispiele:**
 
@@ -131,11 +135,11 @@ e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 
 ## Bestimme Rest von $a^b ÷ m$
 
-**Problem:** bestimme Rest von $a^b ÷ m$ mit $a$, $m$ teilerfremd
+> **Problem:** bestimme Rest von $a^b ÷ m$ mit $a$, $m$ teilerfremd
 
-**Lösung:**
+<!---->
 
-> Dekomponiere Exponent $b = \varphi(m) \cdot c + d$ und wende Satz von Euler an:
+>**Lösung:** Dekomponiere Exponent $b = \varphi(m) \cdot c + d$ und wende Satz von Euler an:
 >
 > $$\overline{a^b} = \overline{(a^{\varphi(m)})^c \cdot a^d} = {\underbrace{\overline{(a^{\varphi(m)})}}_{= \overline{1}\text{ (Euler)}}}^c \cdot \overline{a^d} = \overline{a^d}$$
 > (Rechnung in $ℤ/mℤ$)
@@ -145,17 +149,85 @@ e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 $3$ und $35$ sind teilerfremd, $\varphi(35) = \varphi(5 ⋅ 7) = \varphi(5) \cdot \varphi(7) = 4 \cdot 6 = 25$ und es gilt:
 $$\overline{3^{387}} = \overline{(3^{24})^{16} \cdot 3^3} = {\underbrace{\overline{(3^{24})}}_{= \overline{1}}}^{16} \cdot \overline{3^3} = \overline{27}$$
 
-**Problem:** bestimme Rest von $a^b ÷ m$ mit $a$, $m$ *nicht* teilerfremd
+> **Problem:** bestimme Rest von $a^b ÷ m$ mit $a$, $m$ *nicht* teilerfremd
 
+<!---->
+
+> **Lösung:**
+>
 > 1. Betrachte $(\overline{a}, \overline{a}^2, \overline{a}^3, \ldots, \overline{a}^s = \overline{a}, \ldots) \subseteq ℤ/mℤ$ und identifziere Periodenlänge $s$.
 > 2. Dekomponiere Exponent $b = s \cdot c + d$ und vereinfache:
 >    $$\overline{a^b} = \overline{(a^s)^c \cdot a^d} = \overline{a^s}^c \cdot \overline{a^d} = \overline{a}^c \cdot \overline{a^d} = \overline{a^{c+d}}$$
+>    (Rechnung in $ℤ/mℤ$)
 
 **Beispiel:** Rest von $2^{18} ÷ 10$
 
-$$\overline{2^{18}} = \overline{(2^5)^3 \cdot 2^3} = \overline{2^5}^3 \cdot \overline{2^3} = \overline{2}^3 \cdot \overline{2^3} = \overline{2^6} = \overline{4}$$
+$$\overline{2^{18}} = \overline{(2^5)^3 \cdot 2^3} = \overline{2^5}^3 \cdot \overline{2^3} = \overline{2}^3 \cdot \overline{2^3} = \overline{2^6} = \overline{64} = \overline{4}$$
 
 da aus $(\overline{2}, \overline{4}, \overline{8}, \overline{6}, \overline{2} = \overline{2}^5, \ldots)$ Periodenlänge $s = 5$ abgelesen werden kann.
+
+## Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat
+
+> **Satz (von Euler, 5.24):** Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
+
+*Beweis:* $a, m$ teilerfremd $⇒ \bar{a} ∈ ℤ_m^∗ ⇒ \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1
+
+> **Korollar (vom kleinen Fermat, 5.26):** Für $a ∈ ℕ$, $p$ prim gilt: $a^p ≡ a$ (mod p)
+
+*Beweis:* Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a^{p-1}a ≡ a$ nach Satz von Euler.
+
+> **Satz:** Es gilt
+> 
+> - für Primzahlen $p$, $n ≥ 1$
+>   $$\varphi(p^n) = p^{n-1} (p-1)$$
+>
+> - für $\mathrm{ggT}(a,b) = 1$
+>   $$\varphi(a ⋅ b) = \varphi(a) ⋅ \varphi(b)$$
+
+*Beweis erster Punkt:* Satz 5.28.<br>
+*Beweis zweiter Punkt (siehe auch [hier](https://math.stackexchange.com/a/192456/85341)):* Nach CRT haben wir $ℤ/(abℤ) ≅ ℤ/aℤ × ℤ/bℤ$ als Ringe. D.h. Anzahl invertierbarer Elemente von LHS ist dieselbe wie von RHS. Ein Element $(x, y)$ von RHS ist invertierbar gdw. $x$ in $ℤ/aℤ$ invertierbar und $y$ in $ℤ/bZ$ invertierbar ist. Es gibt also $\varphi(a) ⋅ \varphi(b)$ viele invertierbare Elemente der RHS.
+
+## Chinesischer Restsatz
+
+> **Problem + Beispiel:** bestimme Lösungsmenge von Gleichungssystem mit Gleichungen der Form $x ≡ a_i$ (mod $m_i$)
+>
+> - $x ≡ 3$ (mod 5)
+> - $x ≡ 1$ (mod 7)
+> - $x ≡ 2$ (mod 11)
+>
+> **mit $m_i$ paarweise teilerfremd**.
+
+<!-- -->
+
+> **Lösung:** Es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
+>
+> Konstruiere *eine* Lösung $x := a_1 q_1 q_1' + a_2 q_2 q_2' + a_3 q_3 q_3'$ mit
+>
+> - $q_1 := 7 ⋅ 11 = 77$
+>
+>   In $ℤ/5ℤ$: $\bar{q_1} = \bar{2},\quad\bar{2}^{-1} = \bar{3} \Rightarrow$ wähle $q_1' := 3$. (i. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich)
+>
+> - $q_2 = 5 ⋅ 11 = 55$
+> 
+>   In $ℤ/7ℤ$: $\bar{q_2} = 6,\quad\bar{q_2}^{-1} = \bar{6} \Rightarrow$ wähle $q_2' := 6$
+> - $q_3 = 5 ⋅ 7 = 35$
+>
+>   In $ℤ/11ℤ$: $\bar{q_3} = 2,\quad\bar{q_3}^{-1} = \bar{6} \Rightarrow$ wähle $q_3' := 6$
+>
+> $⇒ x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$
+>
+> Mit $m := m_1 m_2 m_3 = 385$ ist Lösungsmenge $\mathcal{L} = x + mℤ = 1443 + 385ℤ = 288 + 385ℤ$.<br>
+> Hier ist $x\;\%\;m = 1443\;\%\;385 = 288$ kanonischer Repräsentant.
+
+**Beachte:** Bei Berechnung von $x$ muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch beliebige Repräsentenwahl in $ℤ/m_iℤ$ möglich.
+
+Andere Formulierung:
+
+> **Satz (CRT, Formulierung aus Internet):** Wenn $m_1, …, m_k$ paarweise teilerfremd, dann
+> $$ℤ/m ≅ ℤ/m_1 × ⋯ × ℤ/m_k$$
+> als Ringe.
+
+Falls in Gleichungen Koeffizienten vor $x$ auftauchen: wende [erweiterten CRT](https://www.dave4math.com/mathematics/chinese-remainder-theorem/) an.
 
 ## Gleichungen über Z
 
@@ -172,62 +244,6 @@ Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
 $\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} ⇒ q^2 ≡ 1$ (mod 8)
 
 Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $2 ∣ n(n+1)$.
-
-## Satz von Euler, Kleiner Fermat'sche Satz
-
-> **Satz (von Euler):** Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
-
-(Folgt aus: $a, m$ teilerfremd $⇒ \bar{a} ∈ ℤ_m^∗ ⇒ \bar{1} = \bar{a}^{\mathrm{ord}(ℤ_m^\ast)} = \bar{a}^{\varphi(m)}$; group element raised to group order always 1)
-
-> **Satz (kleiner Fermat):** Für $a ∈ ℕ$, $p$ prim gilt: $a^p ≡ a$ (mod p)
-
-Wenn $p ∣ a$, trivial $0 ≡ 0$. Sonst $\mathrm{ggT}(a, p) = 1$ und $a^p ≡ a^{p-1}a ≡ 1a ≡ a$.
-
-> **Lemma:** $\varphi(p^n) = p^{n-1} (p-1)$
-
-> **Lemma:** (aus Internet!) $\mathrm{ggT}(a,b) = 1 \quad\Longrightarrow\quad \varphi(a ⋅ b) = \varphi(a) ⋅ \varphi(b)$
->
-> *Beweis (siehe auch [hier](https://math.stackexchange.com/a/192456/85341)):* Nach CRT haben wir $ℤ/(abℤ) ≅ ℤ/aℤ × ℤ/bℤ$. D.h. Anzahl invertierbarer Elemente von LHS ist dieselbe wie von RHS. Ein Element $(x, y)$ von RHS ist invertierbar gdw. $x$ in $ℤ/aℤ$ invertierbar und $y$ in $ℤ/bZ$ invertierbar ist. Es gibt also $\varphi(a) ⋅ \varphi(b)$ viele invertierbare Elemente der RHS.
-
-## Chinesischer Restsatz
-
-- Problem: Gleichungen der Form $x ≡ a_i$ (mod $m_i$)
-
-  - $x ≡ 3$ (mod 5)
-  - $x ≡ 1$ (mod 7)
-  - $x ≡ 2$ (mod 11)
-
-  **mit $m_i$ paarweise teilerfremd**. Gibt es Lösung für $x ∈ ℤ$?
-
-- Ja, es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
-
-  Konstruiere *eine* Lösung $x := a_1 q_1 q_1' + a_2 q_2 q_2' + a_3 q_3 q_3'$ mit
-
-  - $q_1 := 7 ⋅ 11 = 77$
-
-    In $ℤ/5ℤ$: $\bar{q_1} = \bar{2},\quad\bar{2}^{-1} = \bar{3} \Rightarrow$ wähle $q_1' := 3$. (i. Allg. ist $q_1' ∈ 3 + 5ℤ$ möglich)
-
-  - $q_2 = 5 ⋅ 11 = 55$
-  
-    In $ℤ/7ℤ$: $\bar{q_2} = 6,\quad\bar{q_2}^{-1} = \bar{6} \Rightarrow$ wähle $q_2' := 6$
-  - $q_3 = 5 ⋅ 7 = 35$
-
-    In $ℤ/11ℤ$: $\bar{q_3} = 2,\quad\bar{q_3}^{-1} = \bar{6} \Rightarrow$ wähle $q_3' := 6$
-
-  $⇒ x = 3 ⋅ 77 ⋅ 3 + 1 ⋅ 55 ⋅ 6 + 2 ⋅ 35 ⋅ 6 = 1443$
-
-  > Beachte: hier muss etwa $77$ stehen, anderer Repräsentant bzgl. $ℤ/5ℤ$ *nicht* möglich. Für $q_i'$ is jedoch beliebige Repräsentenwahl in $ℤ/m_iℤ$ möglich.
-
-  Mit $m := m_1 m_2 m_3 = 385$ ist Lösungsmenge $\mathcal{L} = x + mℤ = 1443 + 385ℤ = 288 + 385ℤ$.<br>
-  Hier ist $x\;\%\;m = 1443\;\%\;385 = 288$ kanonischer Repräsentant.
-
-Andere Formulierung:
-
-> **Satz (CRT):** Wenn $m_1, …, m_k$ paarweise teilerfremd, dann
-> $$ℤ/m ≅ ℤ/m_1 × ⋯ × ℤ/m_k$$
-> als Ringe.
-
-Falls in Gleichungen Koeffizienten vor $x$ auftauchen: wende [erweiterten CRT](https://www.dave4math.com/mathematics/chinese-remainder-theorem/) an.
 
 ## Konvertierung Dezimalsystem $\rightarrow$ b-System
 
