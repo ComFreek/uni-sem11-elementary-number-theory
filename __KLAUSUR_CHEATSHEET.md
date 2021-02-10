@@ -197,7 +197,7 @@ da aus $(\overline{2}, \overline{4}, \overline{8}, \overline{6}, \overline{2} = 
 >
 > **mit $m_i$ paarweise teilerfremd**.
 
-<!-- -->
+<!---->
 
 > **Lösung:** Es gibt eine Lösung $x$ (eindeutig in $ℤ/mℤ$, mit $m := Π m_i$)
 >
@@ -275,27 +275,32 @@ Beispiele:
 
 ## Dezimalbruchentwicklung
 
-- Problem: bestimme Art der Dezimalbruchentwicklung (endlich, rein-/gemischtperiodisch) eines gegebenen Bruches $\frac{m}{n}$
-- Lösung:
- 
-  1. Sind Zähler und Nenner teilerfremd? Bestime $\mathrm{ggT}(m, n)$ mittels Euklidischem Algorithmus und kürze damit
-  2. Art *nur* abhängig von Nenner; unterscheide 3 Fälle: Nenner bestehend aus $\{2,5\}$, teilerfremd mit $\{2,5\}$ oder gemischt.
+> **Problem:** bestimme Art der Dezimalbruchentwicklung (endlich, rein-/gemischtperiodisch) eines gegebenen Bruches $\frac{m}{n}$
 
-     > **Sätze 7.1, 7.2 & 7.4, 7.6:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
-     > 
-     > - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b
-     > 
-     >   Entwicklung hat Stellen $s := \max(a,b)$.
-     >
-     > - *reinperiodische* Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
-     >
-     >   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
-     >
-     > - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
-     >
-     >   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
+<!---->
 
-Beispiele:
+> **Lösung:**
+>
+> 1. Sind Zähler und Nenner teilerfremd? Bestime $\mathrm{ggT}(m, n)$ mittels Euklidischem Algorithmus und kürze damit
+> 2. Art *nur* abhängig von Nenner; wende unten stehende Sätze an.
+
+<!---->
+
+> **Sätze 7.1, 7.2 & 7.4, 7.6:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
+> 
+> - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b
+>
+>   Entwicklung hat Stellen $s := \max(a,b)$.
+>
+> - *reinperiodische* Dezimalentwicklung $0.\overline{q_1…q_s}$ ⇔ $\mathrm{ggT}(n, 10) = 1$
+>
+>   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
+>
+> - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
+>
+>   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
+
+**Beispiele:**
 
 - Wie sieht Dezimalentwicklung von $\frac{3}{125}$ aus?
 
@@ -323,36 +328,42 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 
 ## Kettenbruchdarstellung rationaler Zahlen
 
-- **Problem:** gesucht ist Kettenbruchdarstellung von $\frac{a}{b}$
-- Wenn $a > b$: wende euklid. Algorithmus an
+> **Problem:** gesucht ist Kettenbruchdarstellung von $\frac{a}{b}$
 
-  (es ist egal, ob $a$, $b$ teilerfremd oder nicht)
+<!---->
 
-   ```
-   Beispiel: 203/95
-          ___
-   203 = | 2 | ⋅ 95 + 13
-    95 = | 7 | ⋅ 13 +  4
-    13 = | 3 | ⋅  4 +  1
-     4 = | 4 | ⋅  1 +  0
-         -----
-  
-   Darstellung: [2; 7, 3, 4]
-   ```
+> **Lösung (wenn $a > b$):** wende Euklidischen Algorithmus an
+>
+> (es ist egal, ob $a$, $b$ teilerfremd oder nicht)
+>
+> ```
+> Beispiel: 203/95
+>        ___
+> 203 = | 2 | ⋅ 95 + 13
+>  95 = | 7 | ⋅ 13 +  4
+>  13 = | 3 | ⋅  4 +  1
+>   4 = | 4 | ⋅  1 +  0
+>       -----
+>  
+> Darstellung: [2; 7, 3, 4]
+> ```
+>
+> $$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
+>
+> (terminiert wenn am Ende Bruch mit $1$ im Zähler wie $\frac{1}{4}$, aka Stambruch)
+>
+> Daher: $\frac{203}{95} = [2;7,3,4]$.
 
-   $$\frac{203}{95} = 2 + \frac{13}{95} = 2 + \frac{1}{\frac{95}{13}} = 2 + \frac{1}{7 + \frac{4}{13}} = 2 + \frac{1}{7 + \frac{1}{\frac{13}{4}}} = 2 + \frac{1}{7 + \frac{1}{3 + \frac{1}{4}}}$$
+<!---->
 
-   (terminiert wenn am Ende Bruch mit $1$ im Zähler wie $\frac{1}{4}$, aka Stambruch)
-
-   Daher: $\frac{203}{95} = [2;7,3,4]$.
-
-- Wenn $a < b$: bereche Darstellung für $\frac{b}{a}$ und prepende 0
-
-  ```
-  Beispiel: 95/203
-
-  wie oben: 203 /  95 = [2; 7, 3, 4]
-  daher:     95 / 203 = [0; 2, 7, 3, 4]
+> **Lösung (wenn $a < b$):** bereche Darstellung für $\frac{b}{a}$ und prepende 0
+>
+> ```
+> Beispiel: 95/203
+>
+> wie oben: 203 /  95 = [2; 7, 3, 4]
+> daher:     95 / 203 = [0; 2, 7, 3, 4]
+> ```
 
 ## Teilbarkeit
 
