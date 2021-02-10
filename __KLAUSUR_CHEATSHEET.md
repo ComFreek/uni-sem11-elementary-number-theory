@@ -1,16 +1,16 @@
 - Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/ggT(a,b)) = 1.
 
-## Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung
+# Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung
 
 - $b \equiv c$ (mod a) $\Leftrightarrow a \mid (b - c)$
 
-## Erweiterter Euklidischer Algorithmus für $\mathrm{ggT}(a, b)$
+# Erweiterter Euklidischer Algorithmus für $\mathrm{ggT}(a, b)$
 
 ![](./README-euclids-algorithms.png)
 
 Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausdrücken.
 
-## Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$
+# Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$
 
 Sei die Gleichung $ax + by = c$ mit $a, b, c ∈ ℤ$ gegeben. Gesucht ist Lösungsmenge von $(x, y)$ Paaren.
 
@@ -46,13 +46,13 @@ Sei die Gleichung $ax + by = c$ mit $a, b, c ∈ ℤ$ gegeben. Gesucht ist Lösu
 
 Lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
 
-### Beispiel 1
+## Beispiel 1
 
 Werbegeschenkaufgabe von S. 44: 19x + 13y = 1000, wie viele Lösungen (x,y) mit x, y >= 0 gibt es? 4 Lösungen.
 
 Abwandlung von mir: 31x + 23y = 1000, wie viele Lösungen (x,y) mit x, y >= 0 gibt es? 13 Lösungen.
 
-### Beispiel 2
+## Beispiel 2
 
 Finde alle Lösungen von `6x + 4y = 14`.
 
@@ -72,7 +72,7 @@ Finde alle Lösungen von `6x + 4y = 14`.
 4. Partikularlösung: `7 · (1, -1) = (7, -7)`
 5. Alle Lösungen: `L = {(7 + 2⋅t, -7 - 3⋅t) | t in ℤ} = {…, (5, -4), ___(7, -7)___, (9, -10), (11, -13), …}` (dieselben Lösungen von ursprünglicher Gleichung)
 
-### Beispiel 3 (mit negativen Koeffizienten!)
+## Beispiel 3 (mit negativen Koeffizienten!)
 
 Finde alle Lösungen von `-51x + 5y = 13`.
 
@@ -101,26 +101,30 @@ Finde alle Lösungen von `-51x + 5y = 13`.
 - geschickter: nutze $ggT(a,b) ⋅ kgV(a,b) = a⋅ b$
 - für $ggT(a,b) = 1 ⇒ kgV(a,b) = a ⋅ b$
 
-## Additives Inverse in ℤ/mℤ
+# Inverse in ℤ/mℤ
 
-> **Problem:** gesucht ist Inverses von `[a] ∈ ℤ/mℤ`
+## additiv
+
+> **Problem:** gesucht ist Inverses von $\overline{a} ∈ ℤ/mℤ$
 
 <!---->
 
-> **Lösung**: `[-a]`
+> **Lösung**: $\overline{-a} = \overline{-a + m}$
 
-## Multiplikatives Inverse in ℤ/mℤ
+## multiplikativ
 
 > **Problem:** gesucht ist Inverses von $\bar{a} ∈ ℤ/mℤ$, $0 \leq a < m$!!!
 
 <!---->
 
-> **Lösung:**
-> - Inverses existiert gdw. $\mathrm{ggT}(a, m) = 1$.
-> - Löse $ax + my = 1$ via Algorithmus oben, nehme Partikularlösung $x^\ast$.
-> - Ggf. normalisiere erhaltenes $x^\ast$ auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+> **Lösung (wenn raten zu aufwendig):**
+> 1. Wende erw. Euklidischen Algorithmus auf $(m, a)$
 >
-> - Begründung: *Eine* Lösung ist $x$, sodass $ax \equiv 1 \text{ (mod } m \text{)} \Leftrightarrow m \mid ax - 1 \Leftrightarrow \exists y.\ ax - my = 1 \Leftrightarrow \exists y.\ ax + my = 1$
+>    - Inverses existiert gdw. $\mathrm{ggT}(a, m) = 1$.
+>    - Sei $x^\ast$ der (ggf. negative!) Bezout-Koeffizient für $a$. Dann ist $\overline{a}^{-1} = \overline{x^\ast}$.
+> 2. Normalisiere $x^\ast$ auf kanonischen Repräsentanten in $\{0, …, m - 1\}$.
+>
+> (Alternative Sichtweise: löse $ax + my = 1$, nehme Partikularlösung $x^\ast$ und normalisiere. Denn i. Allg. ist $x$ *ein* Inverses von $a$ modulo $m$ gdw. $ax \equiv 1 \text{ (mod } m \text{)} \Leftrightarrow m \mid ax - 1 \Leftrightarrow \exists y.\ ax - my = 1 \Leftrightarrow \exists y.\ ax + my = 1$.)
   
 **Beispiele:**
 
@@ -133,7 +137,7 @@ Finde alle Lösungen von `-51x + 5y = 13`.
 
 e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
 
-## Bestimme Rest von $a^b ÷ m$
+# Bestimme Rest von $a^b ÷ m$
 
 > **Problem:** bestimme Rest von $a^b ÷ m$ mit $a$, $m$ teilerfremd
 
@@ -166,7 +170,7 @@ $$\overline{2^{18}} = \overline{(2^5)^3 \cdot 2^3} = \overline{2^5}^3 \cdot \ove
 
 da aus $(\overline{2}, \overline{4}, \overline{8}, \overline{6}, \overline{2} = \overline{2}^5, \ldots)$ Periodenlänge $s = 5$ abgelesen werden kann.
 
-## Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat
+# Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat
 
 > **Satz (von Euler, 5.24):** Seien $a, m$ teilerfremd, dann $a^{\varphi(m)} ≡ 1$ (mod m).
 
@@ -187,7 +191,7 @@ da aus $(\overline{2}, \overline{4}, \overline{8}, \overline{6}, \overline{2} = 
 *Beweis erster Punkt:* Satz 5.28.<br>
 *Beweis zweiter Punkt (siehe auch [hier](https://math.stackexchange.com/a/192456/85341)):* Nach CRT haben wir $ℤ/(abℤ) ≅ ℤ/aℤ × ℤ/bℤ$ als Ringe. D.h. Anzahl invertierbarer Elemente von LHS ist dieselbe wie von RHS. Ein Element $(x, y)$ von RHS ist invertierbar gdw. $x$ in $ℤ/aℤ$ invertierbar und $y$ in $ℤ/bZ$ invertierbar ist. Es gibt also $\varphi(a) ⋅ \varphi(b)$ viele invertierbare Elemente der RHS.
 
-## Chinesischer Restsatz
+# Chinesischer Restsatz
 
 > **Problem + Beispiel:** bestimme Lösungsmenge von Gleichungssystem mit Gleichungen der Form $x ≡ a_i$ (mod $m_i$)
 >
@@ -229,25 +233,11 @@ Andere Formulierung:
 
 Falls in Gleichungen Koeffizienten vor $x$ auftauchen: wende [erweiterten CRT](https://www.dave4math.com/mathematics/chinese-remainder-theorem/) an.
 
-## Gleichungen über Z
-
-Wenn a Faktor von LHS und RHS, dann `LHS = RHS ⇔ LHS/a = RHS/a`.
-
-# Verschiedenes
-
-finite commutative monoids with (∀abc. ab = ac => b=c) are groups
-
-## Alle ungeraden Quadratzahlen $≡ 1$ mod 8
-
-Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
-
-$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} ⇒ q^2 ≡ 1$ (mod 8)
-
-Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $2 ∣ n(n+1)$.
+# Basissysteme
 
 ## Konvertierung Dezimalsystem $\rightarrow$ b-System
 
-Immer durch $b$ teilen, Reste ergeben $b$-Darstellung.
+Immer durch $b$ teilen, Reste sind $b$-Ziffern.
 
 ```
 Gesucht: 8924 zur Basis 12
@@ -273,22 +263,23 @@ Beispiele:
 - $210_3 - 1_3$
 - $2302_4 - 233_4 = 2003_4$ (tricky mit Borrow und Carry!!)
 
-## Dezimalbruchentwicklung
+# Dezimalbruchentwicklung
 
-> **Problem:** bestimme Art der Dezimalbruchentwicklung (endlich, rein-/gemischtperiodisch) eines gegebenen Bruches $\frac{m}{n}$
+> **Problem:** bestimme Art der Dezimalbruchentwicklung (endlich, rein- oder gemischtperiodisch) eines gegebenen Bruches $\frac{m}{n}$
 
 <!---->
 
 > **Lösung:**
 >
-> 1. Sind Zähler und Nenner teilerfremd? Bestime $\mathrm{ggT}(m, n)$ mittels Euklidischem Algorithmus und kürze damit
-> 2. Art *nur* abhängig von Nenner; wende unten stehende Sätze an.
+> 1. Stelle sicher, dass Bruch vollständig gekürzt ist: bestimme $\mathrm{ggT}(m, n)$ und kürze damit.
+> 2. Bestimme PFZ des Nenners.
+> 3. Wende unten stehende Sätze an.
 
 <!---->
 
 > **Sätze 7.1, 7.2 & 7.4, 7.6:** Ein Bruch $\frac{m}{n}$ mit $m < n$ und $\mathrm{ggT}(m, n) = 1$ ("vollständig gekürzt") hat
 > 
-> - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b
+> - *endliche* Dezimalentwicklung $0.q_1…q_s$ ⇔ $n = 2^a ⋅ 5^b$
 >
 >   Entwicklung hat Stellen $s := \max(a,b)$.
 >
@@ -302,23 +293,19 @@ Beispiele:
 
 **Beispiele:**
 
-- Wie sieht Dezimalentwicklung von $\frac{3}{125}$ aus?
-
-  Endliche Dezimalbruchentwicklung:
+- $\frac{3}{125}$ hat endliche Dezimalbruchentwicklung:
   
   $$\frac{3}{125} = \frac{3}{5^3} = \frac{3⋅2^3}{5^3 ⋅ 2^3} = \frac{24}{10^3} = 0.024$$
 
-- Wie sieht Dezimalentwicklung von $\frac{1}{15}$ aus?
+- $\frac{1}{15}$ hat gemischtperiodische Dezimalbruchentwicklung:
 
-  $15 = 5 ⋅ 3 =: n_1 ⋅ n_2 ⇒ t = 1$ Vorziffern und Periodenlänge $1 = \min_{s \in ℕ} 3 \mid (10^s - 1)$.
+  $$15 = 5 ⋅ 3 =: n_1 ⋅ n_2$$
+  $⇒ t = 1$ Vorziffern und Periodenlänge $1 = \min_{s \in ℕ} 3 \mid (10^s - 1)$; in der Tat $15 = 0.0\overline{6}$.
 
-  $15 = 0.0\overline{6}$.
+- $\frac{1}{28}$ hat gemischtperiodische Dezimalbruchentwicklung:
 
-- Wie sieht Dezimalentwicklung von $\frac{1}{28}$ aus?
-
-  $28 = 2^2 ⋅ 7 =: n_1 ⋅ n_2 ⇒ t = 2$ Vorziffern und Periodenlänge $6 = \min_{s \in ℕ} 7 \mid (10^s - 1)$.
-
-  $28 = 0.03\overline{571428}$.
+  $$28 = 2^2 ⋅ 7 =: n_1 ⋅ n_2$$
+  $⇒ t = 2$ Vorziffern und Periodenlänge $6 = \min_{s \in ℕ} 7 \mid (10^s - 1)$; in der Tat $28 = 0.03\overline{571428}$.
 
 ## Konstruktion periodischer Zahlen
 
@@ -365,9 +352,9 @@ $$\frac{a}{b} \cdot 10^s = z + \frac{a}{b} \quad\Leftrightarrow\quad \frac{a}{b}
 > daher:     95 / 203 = [0; 2, 7, 3, 4]
 > ```
 
-## Teilbarkeit
+# Teilbarkeit
 
-### Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$
+## Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$
 
 > **Satz (Endstellenregeln; Generalisierung der Sätze 8.1, 8.3):** Sei $t \mid 10^s$, dann gilt
 >
@@ -383,9 +370,7 @@ Beispiele:
   $$4 \mid 87954236 ⇔ 4 \mid 36 ⇔ \text{wahr}$$
 - 8, 125, 200, ... Teiler von 1000 ⇒ Teilbarkeit auf letzte drei Stellen reduzierbar
 
-
-
-### Quersummenregeln
+## Quersummenregeln
 
 > **Satz (Quersummenregeln; Sätze 8.4, 8.5, und Paragraph danach im Skript):**
 >
@@ -440,7 +425,7 @@ Beispiele:
 
 Siehe Skript.
 
-## Vor Abgabe der Klausur
+# Vor Abgabe der Klausur
 
 - Sind überall Striche über Restklassenzahlen?
 - Überall Proben berechnet? Insbesondere auch bei CRT?
@@ -459,3 +444,17 @@ tolarz | I can use Euclid's algorithm to comput ethe continued fractio nreprsent
                      │13:03:08           tolarz | (Is this true? I only verified by an example.)                                                                                               │ Argorok
                      │13:03:44           tolarz | Since for the continued fraction representation of a/b is precisely (q_i)_{i >= 0}, it doesn't matter whether a and b are coprime or not.
                      ```
+
+## Verschiedenes
+
+Gleichungen über Z: wenn a Faktor von LHS und RHS, dann `LHS = RHS ⇔ LHS/a = RHS/a`.
+
+finite commutative monoids with (∀abc. ab = ac => b=c) are groups
+
+## Alle ungeraden Quadratzahlen $≡ 1$ mod 8
+
+Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
+
+$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} ⇒ q^2 ≡ 1$ (mod 8)
+
+Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $2 ∣ n(n+1)$.

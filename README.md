@@ -32,3 +32,4 @@ Gelesen bis vor Kapitel 8, Seite 99.
 ## Klausurvorbereitung
 
 - Übung 6: A1,2,4 done
+- Übung 7: A1,2 done
