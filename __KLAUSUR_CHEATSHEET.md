@@ -1,3 +1,23 @@
+<!--
+To edit this file, open the containing folder with Visual Studio Code.
+If prompted to install workspace-specific extensions and apply their settings, press yes.
+-->
+<!-- title: Cheatsheet Elementare Zahlentheorie (von Navid Roux) -->
+
+# EZT Cheatsheet (Navid Roux)<!-- omit in toc -->
+
+1. [Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung](#umwandlung-mod-gleichung--teilbarkeitsgleichung)
+2. [Erweiterter Euklidischer Algorithmus für $\mathrm{ggT}(a, b)$](#erweiterter-euklidischer-algorithmus-für-mathrmggta-b)
+3. [Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$](#lösungen-von-ax--by--c-mit-x-y--ℤ)
+4. [Inverse in ℤ/mℤ](#inverse-in-ℤmℤ)
+5. [Bestimme Rest von $a^b ÷ m$](#bestimme-rest-von-ab--m)
+6. [Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat](#eulersche-varphi-funktion-satz-von-euler-und-kleinem-fermat)
+7. [Chinesischer Restsatz](#chinesischer-restsatz)
+8. [Teilbarkeit](#teilbarkeit)
+9. [Vor Abgabe der Klausur](#vor-abgabe-der-klausur)
+
+<hr>
+
 - Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/ggT(a,b)) = 1.
 
 # Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung
