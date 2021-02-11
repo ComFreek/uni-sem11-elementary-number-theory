@@ -3,5 +3,5 @@
     "markdown.extension.print.imgToBase64": true,
     "markdown.extension.print.onFileSave": true,
     "markdown.extension.toc.orderedList": true,
-    "markdown.extension.toc.levels": "1..1"
+    "markdown.extension.toc.levels": "1..2"
 }

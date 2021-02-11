@@ -31,9 +31,11 @@ Gelesen bis vor Kapitel 8, Seite 99.
 
 ## Klausurvorbereitung
 
-- Übung 6: A1,2,4 done
+- Übung 4: done
+- Übung 6: done (A3 \[Multiplikationstafel\] skipped)
 - Übung 7: A1,2 done
-- Übung 8: A4 done
+- Übung 8: done
+- Übung 9: done
 
 ```
 tolarz | I can use Euclid's algorithm to comput ethe continued fractio nreprsentation                                                                 │ angular_mike

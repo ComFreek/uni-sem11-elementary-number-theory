@@ -6,29 +6,63 @@ If prompted to install workspace-specific extensions and apply their settings, p
 
 # EZT Cheatsheet (Navid Roux)<!-- omit in toc -->
 
-1. [Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung](#umwandlung-mod-gleichung--teilbarkeitsgleichung)
-2. [Erweiterter Euklidischer Algorithmus für $\mathrm{ggT}(a, b)$](#erweiterter-euklidischer-algorithmus-für-mathrmggta-b)
-3. [Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$](#lösungen-von-ax--by--c-mit-x-y--ℤ)
-4. [Inverse in ℤ/mℤ](#inverse-in-ℤmℤ)
-5. [Bestimme Rest von $a^b ÷ m$](#bestimme-rest-von-ab--m)
-6. [Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat](#eulersche-varphi-funktion-satz-von-euler-und-kleinem-fermat)
-7. [Chinesischer Restsatz](#chinesischer-restsatz)
-8. [Teilbarkeit](#teilbarkeit)
-9. [Vor Abgabe der Klausur](#vor-abgabe-der-klausur)
+1. [Vor Abgabe der Klausur](#vor-abgabe-der-klausur)
+2. [Verschieden Kleines](#verschieden-kleines)
+3. [$\mathrm{ggT}(a, b)$ und erw. Euklidischer Algorithmus](#mathrmggta-b-und-erw-euklidischer-algorithmus)
+4. [$\mathrm{kgV}(a,b)$](#mathrmkgvab)
+5. [Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$](#lösungen-von-ax--by--c-mit-x-y--ℤ)
+6. [Inverse in ℤ/mℤ](#inverse-in-ℤmℤ)
+   1. [additiv](#additiv)
+7. [Bestimme Rest von $a^b ÷ m$](#bestimme-rest-von-ab--m)
+8. [Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat](#eulersche-varphi-funktion-satz-von-euler-und-kleinem-fermat)
+9. [Chinesischer Restsatz](#chinesischer-restsatz)
+   1. [Kettenbruchdarstellung rationaler Zahlen](#kettenbruchdarstellung-rationaler-zahlen)
+10. [Teilbarkeit](#teilbarkeit)
+   1. [Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$](#teilbarkeit-bzgl-zahl-mit-nur-primfaktoren-2-5)
+   2. [Quersummenregeln](#quersummenregeln)
+   3. [Teilbarkeit bzgl. 7 und 11](#teilbarkeit-bzgl-7-und-11)
 
 <hr>
 
-- Für a, b in N: a/ggT(a,b) und b/ggT(a,b) teilerfremd, d.h. ggT(a/ggT(a,b), b/ggT(a,b)) = 1.
+# Vor Abgabe der Klausur
 
-# Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung
+- Sind überall Striche für Restklassen?
+- Überall Proben berechnet? Insbesondere auch bei CRT?
+- Überall Antwortsätze geschrieben?
 
-- $b \equiv c$ (mod a) $\Leftrightarrow a \mid (b - c)$
+<hr>
 
-# Erweiterter Euklidischer Algorithmus für $\mathrm{ggT}(a, b)$
+# Verschieden Kleines
+
+- Über $ℤ$ gilt: $(x \mid z) ∧ (y \mid z) ⇒ (ux + vy \mid z)$
+
+- Teilbarkeit bzgl. 0:
+  - $0 \mid 0$, $a \mid 0$
+  - $0 \mid b ⇒ b = 0$ ("Null ist nur Teiler von Null")
+
+- Umwandlung mod-Gleichung ↔ Teilbarkeitsgleichung: $b \equiv c \text{ (mod } a \text{)} \Leftrightarrow a \mid (b - c)$
+
+- Alle ungeraden Quadratzahlen $≡ 1$ mod 8: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $n(n+1)$ enthält Faktor $2$.
+
+- Für Ring $R$ ist $a ∈ R$ *Nullteiler*, wenn es $b ∈ R$ gibt, sodass: $a ≠ 0 ∧ b ≠ 0 ∧ ab = 0$.
+
+  (Diese Definition der Vorlesung sieht 0 nicht als Nullteiler entgegen weitläufiger Literatur.)
+- $ℤ/mℤ$ hat
+  - invertierbare Elemente $\{\overline{a} \mid a ∈ \{1,…,m-1\} ∧ \mathrm{ggT}(a, m) = 1\}$
+  - Nullteiler $\{\overline{a} \mid a ∈ \{1,…,m-1\} ∧ \mathrm{ggT}(a, m) ≠ 1\}$
+
+#  $\mathrm{ggT}(a, b)$ und erw. Euklidischer Algorithmus
 
 ![](./README-euclids-algorithms.png)
 
 Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausdrücken.
+
+# $\mathrm{kgV}(a,b)$
+
+- manuell: ![](./kgv-berechnung.png)
+
+- geschickter: nutze $\mathrm{ggT}(a,b) ⋅ \mathrm{kgV}(a,b) = a⋅b$
+- für $\mathrm{ggT}(a,b) = 1 ⇒ \mathrm{kgV}(a,b) = a ⋅ b$
 
 # Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$
 
@@ -48,13 +82,11 @@ Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausd
 >
 > 3. Berechne Bezout-Koeffizienten: $\mathrm{ggT}(a, b) = ax^\ast + by^\ast$
 >   
->    Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über transformierte Gleichung (Lsg.menge bleibt gleich)
->    $$\frac{a}{\mathrm{ggT}(a, b)} x + \frac{b}{\mathrm{ggT}(a, b)} y = \frac{c}{\mathrm{ggT}(a, b)}$$
->
->    Möglich, da $\mathrm{ggT}(a, b) \mid a,b,c$ nach Annahme und da $\mathrm{ggT}(a, b)$ kein Nullteiler in ℤ ist.
+>    Falls $\mathrm{ggT}(a, b) ≠ 1$, dann betrachte restlichen Algorithmus über durch $\mathrm{ggT}(a, b)$ geteilte Gleichung (Lsg.menge bleibt gleich):
+>    $$\underbrace{\frac{a}{\mathrm{ggT}(a, b)}}_{\text{neues }a} x + \underbrace{\frac{b}{\mathrm{ggT}(a, b)}}_{\text{neues } b} y = \frac{c}{\mathrm{ggT}(a, b)}$$
 > 
->    Die Bezout-Koeffzienten sind *dieselben*, denn:
-   $1 = \frac{\mathrm{ggT}(a,b)}{\mathrm{ggT}(a, b)} = \frac{a}{\mathrm{ggT}(a, b)}x^\ast + \frac{b}{\mathrm{ggT}(a, b)}y^\ast$
+>    Die Bezout-Koeffzienten für die "neuen $a$s und $b$s" sind *dieselben*, denn:
+   $\frac{a}{\mathrm{ggT}(a, b)}x^\ast + \frac{b}{\mathrm{ggT}(a, b)}y^\ast = \frac{1}{\mathrm{ggT}(a, b)}(ax^\ast + by^\ast) = 1$.
 > 
 >    Insgesamt nötig, da sonst Satz 4.18 in Schritt 5 nicht anwendbar.
 >
@@ -73,60 +105,36 @@ Erweitert: durch Rückeinsetzen $r_n$ mittels Linearkombination $a$ und $b$ ausd
 
 > **Merke:** Eine lineare dipohantische Gleichung hat entweder 0 oder unendlich viele Lösungen.
 
-## Beispiel 1
+**Beispiele:**
 
-Werbegeschenkaufgabe von S. 44: 19x + 13y = 1000, wie viele Lösungen (x,y) mit x, y >= 0 gibt es? 4 Lösungen.
+- Finde alle Lösungen von $6x + 4y = 14$.
 
-Abwandlung von mir: 31x + 23y = 1000, wie viele Lösungen (x,y) mit x, y >= 0 gibt es? 13 Lösungen.
+  1. $\mathrm{ggT}(6, 4) = 2 = \underbrace{1}_{x^\ast}⋅6 + \underbrace{(-1)}_{y^\ast}⋅4$
+  2. $\mathrm{ggT}(6, 4) = 2 \mid 14 ⇒$ lösbar.
+  3. $6x + 4y = 14 ⇔ 3x + 2y = 7$ und $\mathrm{ggT}(3,2) = \overbrace{1}^{x^\ast}⋅3 + \overbrace{(-1)}^{y^\ast}⋅2$
+  4. Partikularlösung $(x_0, y_0) = (7, -7)$
+  5. Lösungsmenge $\mathcal{L} = \{(7 + 2⋅t, -7 - 3⋅t) \mid t ∈ ℤ\} = \{…, (5, -4), \underline{(7, -7)}, (9, -10), (11, -13), …\}$
 
-## Beispiel 2
+- Werbegeschenkaufgabe von Skript S. 44: Wie viele nichtnegative Lösungspaare von $19x + 13y = 1000$ gibt es? 4 mittels Algorithmus oben.
 
-Finde alle Lösungen von `6x + 4y = 14`.
+  Wie viele gibt es für $31x + 23y = 1000$? 13 Lösungspaare.
 
-1. `ggT(6, 4) = 2 = 1 * 6 - 1 * 4`
-2. `ggT(6, 4) = 2 | 14`, okay!
-3. Normalisierung: `3x + 2y = 7`, rekursiv:
+- Gleichung mit negativen Koeffizienten: $-51x + 5y = 13$
 
-   1. Berechne
+  1. $\mathrm{ggT}(-51, 5) = 1$ ($= \mathrm{ggT}(51, 5)$)
+     
+     ```
+     -51 = -11 ⋅ 5 + 4
+       5 =   1 ⋅ 4 + 1
+       4 =   4 ⋅ 1 + 0
    
-      ```
-      3 = 1·2 + 1
-      2 = 2·2 + 0
-      
-      ⇒ 1 = (1)·(3) + (-1)·(2)
-      ```
-   2. `ggT(3, 2) = 1 | 7`, okay!
-4. Partikularlösung: `7 · (1, -1) = (7, -7)`
-5. Alle Lösungen: `L = {(7 + 2⋅t, -7 - 3⋅t) | t in ℤ} = {…, (5, -4), ___(7, -7)___, (9, -10), (11, -13), …}` (dieselben Lösungen von ursprünglicher Gleichung)
+     ⇒ 1 = (-1)⋅(-51) + (-10)⋅(5)
+     ```
 
-## Beispiel 3 (mit negativen Koeffizienten!)
-
-Finde alle Lösungen von `-51x + 5y = 13`.
-
-1. Sofort klar: `ggT(-51, 5) = ggT(51, 5) = 1`
-   Berechne trotzdem:
-
-   ```
-   -51 = -11 ⋅ 5 + 4
-     5 =   1 ⋅ 4 + 1
-     4 =   4 ⋅ 1 + 0
-   
-   ⇒ 1 = (-1)⋅(-51) + (-10)⋅(5)
-   ```
-
-2. `ggT(-51, 5) = 1 | 13`, d.h. unendlich viele Lösungen existieren!
-3. -/-
-4. Partikularlösung `13 ⋅ (-1, -10) = (-13, -130)`.
-5. Alle Lösungen: `L = {(-13 + 5⋅t, -130 - (-51)⋅t), t ∈ ℤ}`
-
-
-
-## kgV
-
-- manuell: ![](./kgv-berechnung.png)
-
-- geschickter: nutze $ggT(a,b) ⋅ kgV(a,b) = a⋅ b$
-- für $ggT(a,b) = 1 ⇒ kgV(a,b) = a ⋅ b$
+  2. $\mathrm{ggT}(-51, 5) = 1 \mid 13 ⇒$ lösbar.
+  3. -/-
+  4. Partikularlösung $(x_0, y_0) = (-13, -130)$
+  5. Lösungsmenge $\mathcal{L} = \{(-13 + 5⋅t, -130 - (-51)⋅t) \mid t ∈ ℤ\}$
 
 # Inverse in ℤ/mℤ
 
@@ -155,14 +163,8 @@ Finde alle Lösungen von `-51x + 5y = 13`.
   
 **Beispiele:**
 
-- In ℤ/13ℤ: $\overline{6}^{-1} = \overline{11}$
-- In ℤ/89ℤ: $\overline{15}^{-1} = \overline{6}$
-
-## Nullteiler
-
-`zero divisor := Σ(a:R) Σ(b:R) a ≠ 0 ∧ b ≠ 0 ∧ ab = 0` (def. from lecture; usually `0` *is* considered a zero divisor…)
-
-e.g. in ℤ/6ℤ: `(2, 3)` is zero divisor
+- In $ℤ/13ℤ$: $\overline{6}^{-1} = \overline{11}$
+- In $ℤ/89ℤ$: $\overline{15}^{-1} = \overline{6}$
 
 # Bestimme Rest von $a^b ÷ m$
 
@@ -286,9 +288,16 @@ Probe mit TR! Auf Casio fx-991DE Plus: `Mode -> Pfeil runter -> 3 (Base-N) -> 89
 
 Beispiele:
 
-- $455_6 + 1_6$
-- $210_3 - 1_3$
-- $2302_4 - 233_4 = 2003_4$ (tricky mit Borrow und Carry!!)
+- $455_6 + 1_6 = 500\_6$
+- $210_3 - 1_3 = 202₃$
+- $2302_4 - 233_4 = 2003_4$ (tricky mit Borrow und Carry!)
+
+  ```
+    2  3  0  2
+  -    2₁ 3₁ 3
+  -------------
+    2  0  0  3
+  ```
 
 # Dezimalbruchentwicklung
 
@@ -314,7 +323,7 @@ Beispiele:
 >
 >   Periodenlänge $s := \min_{s \in ℕ} n \mid (10^s - 1)$
 >
-> - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
+> - *gemischtperiodische* Dezimalentwicklung $0.p_1…p_t\overline{q_1…q_s}$ ⇔ $n = n_1 ⋅ n_2$ mit $n_1,n_2 > 1$ und $n_1 \mid 10^t$ ($t$ minimal), $\mathrm{ggT}(n_2, 10) = 1$
 >
 >   $t$ Vorziffern; Periodenlänge $s$ ist die von $\frac{1}{n_2}$
 
@@ -453,21 +462,3 @@ $$
 ## Teilbarkeit bzgl. 7 und 11
 
 Siehe Skript.
-
-# Vor Abgabe der Klausur
-
-- Sind überall Striche für Restklassen?
-- Überall Proben berechnet? Insbesondere auch bei CRT?
-- Überall Antwortsätze geschrieben?
-
----
-
-
-
-## Alle ungeraden Quadratzahlen $≡ 1$ mod 8
-
-Sei $q ∈ ℤ$ und $q^2$ ungerade. Dann ist $q$ ungerade.
-
-$\bar{q^2} = \bar{q}^2 ∈ \{\bar{1}^2, \bar{3}^2, \bar{5}^2, \bar{7}^2\} = \{\bar{1}\} ⇒ q^2 ≡ 1$ (mod 8)
-
-Alternativ: $q^2 = (2n + 1)² = 4n² + 4n + 1 = 4n(n+1) + 1 ≡ 1$, da $8 ∣ 4n(n+1)$, denn $2 ∣ n(n+1)$.
