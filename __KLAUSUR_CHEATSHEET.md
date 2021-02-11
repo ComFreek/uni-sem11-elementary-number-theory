@@ -13,14 +13,20 @@ If prompted to install workspace-specific extensions and apply their settings, p
 5. [Lösungen von $ax + by = c$ mit $(x, y) ∈ ℤ²$](#lösungen-von-ax--by--c-mit-x-y--ℤ)
 6. [Inverse in ℤ/mℤ](#inverse-in-ℤmℤ)
    1. [additiv](#additiv)
+   2. [multiplikativ](#multiplikativ)
 7. [Bestimme Rest von $a^b ÷ m$](#bestimme-rest-von-ab--m)
 8. [Eulersche $\varphi$-Funktion, Satz von Euler und kleinem Fermat](#eulersche-varphi-funktion-satz-von-euler-und-kleinem-fermat)
 9. [Chinesischer Restsatz](#chinesischer-restsatz)
-   1. [Kettenbruchdarstellung rationaler Zahlen](#kettenbruchdarstellung-rationaler-zahlen)
-10. [Teilbarkeit](#teilbarkeit)
-   1. [Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$](#teilbarkeit-bzgl-zahl-mit-nur-primfaktoren-2-5)
-   2. [Quersummenregeln](#quersummenregeln)
-   3. [Teilbarkeit bzgl. 7 und 11](#teilbarkeit-bzgl-7-und-11)
+10. [Basissysteme](#basissysteme)
+    1. [Konvertierung Dezimalsystem $\rightarrow$ b-System](#konvertierung-dezimalsystem-rightarrow-b-system)
+    2. [Schriftliches Addieren/Subtrahieren zur Basis b](#schriftliches-addierensubtrahieren-zur-basis-b)
+11. [Dezimalbruchentwicklung](#dezimalbruchentwicklung)
+    1. [Konstruktion periodischer Zahlen](#konstruktion-periodischer-zahlen)
+    2. [Kettenbruchdarstellung rationaler Zahlen](#kettenbruchdarstellung-rationaler-zahlen)
+12. [Teilbarkeit](#teilbarkeit)
+    1. [Teilbarkeit bzgl. Zahl mit nur Primfaktoren $\{2, 5\}$](#teilbarkeit-bzgl-zahl-mit-nur-primfaktoren-2-5)
+    2. [Quersummenregeln](#quersummenregeln)
+    3. [Teilbarkeit bzgl. 7 und 11](#teilbarkeit-bzgl-7-und-11)
 
 <hr>
 
@@ -461,4 +467,4 @@ $$
 
 ## Teilbarkeit bzgl. 7 und 11
 
-Siehe Skript.
+Siehe Skript S. 106ff.

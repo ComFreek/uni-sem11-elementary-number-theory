@@ -71,7 +71,14 @@ figcaption {
             }
         </style>
         <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+}
 </style>
         
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
@@ -93,19 +100,31 @@ If prompted to install workspace-specific extensions and apply their settings, p
 <li><a href="#inverse-in-%E2%84%A4m%E2%84%A4">Inverse in ℤ/mℤ</a>
 <ol>
 <li><a href="#additiv">additiv</a></li>
+<li><a href="#multiplikativ">multiplikativ</a></li>
 </ol>
 </li>
 <li><a href="#bestimme-rest-von-ab--m">Bestimme Rest von <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>b</mi></msup><mo>÷</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">a^b ÷ m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span></eq></a></li>
 <li><a href="#eulersche-varphi-funktion-satz-von-euler-und-kleinem-fermat">Eulersche <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span></eq>-Funktion, Satz von Euler und kleinem Fermat</a></li>
-<li><a href="#chinesischer-restsatz">Chinesischer Restsatz</a>
+<li><a href="#chinesischer-restsatz">Chinesischer Restsatz</a></li>
+<li><a href="#basissysteme">Basissysteme</a>
 <ol>
+<li><a href="#konvertierung-dezimalsystem-rightarrow-b-system">Konvertierung Dezimalsystem <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span></eq> b-System</a></li>
+<li><a href="#schriftliches-addierensubtrahieren-zur-basis-b">Schriftliches Addieren/Subtrahieren zur Basis b</a></li>
+</ol>
+</li>
+<li><a href="#dezimalbruchentwicklung">Dezimalbruchentwicklung</a>
+<ol>
+<li><a href="#konstruktion-periodischer-zahlen">Konstruktion periodischer Zahlen</a></li>
 <li><a href="#kettenbruchdarstellung-rationaler-zahlen">Kettenbruchdarstellung rationaler Zahlen</a></li>
 </ol>
 </li>
-<li><a href="#teilbarkeit">Teilbarkeit</a></li>
+<li><a href="#teilbarkeit">Teilbarkeit</a>
+<ol>
 <li><a href="#teilbarkeit-bzgl-zahl-mit-nur-primfaktoren-2-5">Teilbarkeit bzgl. Zahl mit nur Primfaktoren <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>2</mn><mo separator="true">,</mo><mn>5</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{2, 5\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mclose">}</span></span></span></span></eq></a></li>
 <li><a href="#quersummenregeln">Quersummenregeln</a></li>
 <li><a href="#teilbarkeit-bzgl-7-und-11">Teilbarkeit bzgl. 7 und 11</a></li>
+</ol>
+</li>
 </ol>
 <hr>
 <h1 id="vor-abgabe-der-klausur">Vor Abgabe der Klausur</h1>
@@ -624,7 +643,7 @@ z_n…z_0 = \sum_{i=0}^n z_i 10^i = &amp;(z_n ⋅ 10^2 + z_{n-1} 10^1 + z_{n-2})
 <li><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>∣</mo><mn>1001</mn></mrow><annotation encoding="application/x-tex">7 \mid 1001</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">1</span></span></span></span></eq>, daher: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>∣</mo><mi>z</mi><mo>⇔</mo><mn>7</mn><mo>∣</mo><mtext>alt. Quersumme 3-ter Ordnung</mtext></mrow><annotation encoding="application/x-tex">7 \mid z ⇔ 7 \mid \text{alt. Quersumme 3-ter Ordnung}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">alt. Quersumme 3-ter Ordnung</span></span></span></span></span></eq></li>
 </ul>
 <h2 id="teilbarkeit-bzgl-7-und-11">Teilbarkeit bzgl. 7 und 11</h2>
-<p>Siehe Skript.</p>
+<p>Siehe Skript S. 106ff.</p>
 
     </body>
     </html>
