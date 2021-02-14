@@ -1,3 +1,7 @@
+## Druck
+
+- S. 1 - 108 (inkl.)
+
 Ich selbst habe den Beweis des Satzes 3.15 geskipped
 
 Gelesen bis vor Kapitel 8, Seite 99.
