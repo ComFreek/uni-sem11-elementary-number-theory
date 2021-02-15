@@ -2,7 +2,7 @@
 
 # EZT Cheatsheet<!-- omit in toc -->
 
-By Navid Roux from 2020-01-14 for EZT as taught in WS 20/21; licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+By Navid Roux from 2020-01-15 for EZT as taught in WS 20/21; licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 1. [Vor Abgabe der Klausur](#vor-abgabe-der-klausur)
 2. [Verschieden Kleines](#verschieden-kleines)
@@ -77,7 +77,7 @@ Erweiterte Variante: durch Rückeinsetzen $\mathrm{ggT}(a, b) = r_n$ als Lineark
 > **Lösung:** 
 > 1. Berechne $\mathrm{ggT}(a, b)$ mit erw. Euklidischen Algorithmus
 >
-> 2. Falls *nicht* $\mathrm{ggT}(a, b) ∤ c$, dann unlösbar nach Satz 4.15. Terminiere.
+> 2. Falls $\mathrm{ggT}(a, b) ∤ c$, dann unlösbar nach Satz 4.15. Terminiere.
 >
 >    > **Satz 4.15:** Es gilt:
 >    > $$\mathrm{im}(\underbrace{ax + by}_{∈ ℤ[x,y]}) = \mathrm{ggT}(a, b)ℤ$$
