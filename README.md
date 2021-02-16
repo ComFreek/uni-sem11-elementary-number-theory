@@ -17,7 +17,7 @@
   ```
   a = q  * b + r
   b = q' * r + r'
-  ...
+  …
   ```
 
 ## Klausurvorbereitung
