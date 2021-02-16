@@ -1,4 +1,4 @@
-# Braindump der Klausur zur *Elementaren Zahlentheorie* &mdash; Wintersemester 2020/21
+# Braindump der Klausur zur *Elementaren Zahlentheorie* &mdash; 2021-02-15, Wintersemester 2020/21
 
 60 Minuten Zeit, insgesamt 20 Punkte, erlaubte Hilfsmittel: Skript mit Notizen (!), abgegebene Übungen, beliebiger Taschenrechner
 
