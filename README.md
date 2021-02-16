@@ -1,7 +1,7 @@
 # Elementare Zahlentheorie WS 20/21
 
 - **CHEATSHEET: [./cheatsheet/cheatsheet.pdf](./cheatsheet/cheatsheet.pdf)**
-- **BRAINDUMP WS 20/21: [./exam/braindump-ws20.pdf](./exam/braindump-ws20.pdf)**
+- **BRAINDUMP WS 20/21: [./exam/ezt_braindump_ws20-21.pdf](./exam/ezt_braindump_ws20-21.pdf)**
 - **ALTKLAUSUREN: [./exam](./exam)**
 
 ## Klausur
