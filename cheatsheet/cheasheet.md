@@ -1,8 +1,10 @@
 <!-- title: Cheatsheet Elementare Zahlentheorie (von Navid Roux) -->
 
-# EZT Cheatsheet<!-- omit in toc -->
+# *Elementare Zahlentheorie:* Cheatsheet<!-- omit in toc -->
 
-By Navid Roux from 2020-01-15 for EZT as taught in WS 20/21; licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Erstellt von Navid Roux am 2020-01-15 als Prüfungsvorbereitung für Vorlesung *Elementare Zahlentheorie* gehalten im Wintersemester 2020/21 von [Christina Birkenhake](https://de.wikipedia.org/wiki/Christina_Birkenhake) an der [FAU Erlangen-Nürnberg](https://fau.eu).
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0;vertical-align:middle;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>&nbsp;Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.
 
 1. [Vor Abgabe der Klausur](#vor-abgabe-der-klausur)
 2. [Verschieden Kleines](#verschieden-kleines)
